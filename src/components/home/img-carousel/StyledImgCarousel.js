@@ -37,30 +37,76 @@ const CarouselContainer = styled.div`
   justify-self: center;
 `;
 
-const fade = keyframes`
-  from {
-    opacity: .4
-  } 
-  to {
-    opacity: 1
-  }
+// All slides share one grid cell so the carousel is always as tall as its tallest slide.
+// The padding/negative margin gives the image shadows room without clipping them.
+const Slides = styled.div`
+  display: grid;
+  overflow: hidden;
+  padding: 0.5rem;
+  margin: -0.5rem;
+`;
+
+// Slides travel past the wrapper's padding so no edge of a neighbouring slide stays visible
+const slideInRight = keyframes`
+  from { transform: translateX(calc(100% + 1rem)); }
+  to { transform: translateX(0); }
+`;
+
+const slideOutLeft = keyframes`
+  from { transform: translateX(0); }
+  to { transform: translateX(calc(-100% - 1rem)); visibility: hidden; }
+`;
+
+const slideInLeft = keyframes`
+  from { transform: translateX(calc(-100% - 1rem)); }
+  to { transform: translateX(0); }
+`;
+
+const slideOutRight = keyframes`
+  from { transform: translateX(0); }
+  to { transform: translateX(calc(100% + 1rem)); visibility: hidden; }
 `;
 
 const ImgSlide = styled.div`
-  display: none;
-  animation-name: ${fade};
-  animation-duration: 1.5s;
+  grid-area: 1 / 1;
+  align-self: center;
+  visibility: hidden;
 
-  &.active {
-    display: block;
+  &.active, &.leaving {
+    visibility: visible;
+  }
+
+  &.animate {
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+  }
+
+  &.animate.active.next { animation-name: ${slideInRight}; }
+  &.animate.leaving.next { animation-name: ${slideOutLeft}; }
+  &.animate.active.prev { animation-name: ${slideInLeft}; }
+  &.animate.leaving.prev { animation-name: ${slideOutRight}; }
+
+  @media (prefers-reduced-motion: reduce) {
+    &.animate {
+      animation-duration: 0.01s;
+    }
   }
 
   img {
     border: 1px solid ${(props) => props.theme.borderColor};
     border-radius: 0.5rem;
     box-shadow: 1px 1px 5px ${(props) => props.theme.boxShadowColor};
-    height: 30rem;
-    aspect-ratio: 0.685;
+    display: block;
+    ${(props) => props.wide ? `
+      width: 100%;
+      height: auto;
+      max-height: 28rem;
+      object-fit: contain;
+    ` : `
+      height: 30rem;
+      aspect-ratio: 0.685;
+    `}
   }
 `;
 
@@ -86,4 +132,4 @@ const Dot = styled.span`
   }
 `;
 
-export { CarouselContainer, ImgSlide, NavDots, Dot };
+export { CarouselContainer, Slides, ImgSlide, NavDots, Dot };

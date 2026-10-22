@@ -51,6 +51,7 @@ const StyledSkillCol = styled.div`
   }
 
   li {
+    min-width: 100px;
     font-size: 1rem;
     font-weight: 300;
     line-height: 2rem;

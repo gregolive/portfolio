@@ -6,7 +6,7 @@ const Footer = () => {
     <StyledFooter>
       <FooterLogo>go</FooterLogo>
       <SocialLinks email={false} />
-      <small>Built with care by &copy;gregolive</small>
+      <small>Built with care by @gregolive</small>
     </StyledFooter>
   );
 };

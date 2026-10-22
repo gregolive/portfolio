@@ -9,17 +9,33 @@ const StyledContactForm = styled.form`
   * {
     font-family: 'Inter', sans-serif;
     font-size: 1.1rem;
-    border-radius: 0.3rem;
+    border-radius: 0.5rem;
   }
 
-  *:not(:last-child):not(:nth-child(5)) {
+  input, textarea {
     background: ${(props) => props.theme.inputColor};
     color: ${(props) => props.theme.fontColor};
-    border: none;
-    padding: 0.3rem 0.6rem;
+    border: 1px solid transparent;
+    padding: 0.8rem 1rem;
+    outline: none;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
 
-    ::placeholder {
+    &::placeholder {
       color: ${(props) => props.theme.placeholderColor};
+      transition: opacity 0.25s ease;
+    }
+
+    &:hover {
+      border-color: ${(props) => props.theme.borderColor};
+    }
+
+    &:focus {
+      border-color: ${(props) => props.theme.primaryColor};
+      box-shadow: 0 0 0 3px ${(props) => props.theme.primaryColor}33, 0 2px 12px ${(props) => props.theme.primaryColor}22;
+    }
+
+    &:focus::placeholder {
+      opacity: 0.5;
     }
   }
 

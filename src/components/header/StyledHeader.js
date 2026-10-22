@@ -165,7 +165,7 @@ const NavbarBurger = styled.button`
 const NavbarMenu = styled.div`
   justify-self: end;
   display: grid;
-  grid-template-columns: repeat(4, auto);
+  grid-template-columns: repeat(5, auto);
   column-gap: 1.5rem;
 
   @media screen and (max-width: 768px) {
@@ -177,7 +177,7 @@ const NavbarMenu = styled.div`
   
     &.open {
       background: ${(props) => props.theme.backgroundColor};
-      max-height: 15rem;
+      max-height: 18rem;
       visibility: visible;
       transition: max-height 0.25s ease-in;
       padding-bottom: 0.5rem;
@@ -214,6 +214,10 @@ const NavbarLink = styled.a`
 
   &:nth-child(4) {
     animation-delay: 1s;
+  }
+
+  &:nth-child(5) {
+    animation-delay: 1.2s;
   }
 
   &:hover {
