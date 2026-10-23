@@ -165,7 +165,7 @@ const NavbarBurger = styled.button`
 const NavbarMenu = styled.div`
   justify-self: end;
   display: grid;
-  grid-template-columns: repeat(5, auto);
+  grid-template-columns: repeat(3, auto);
   column-gap: 1.5rem;
 
   @media screen and (max-width: 768px) {
