@@ -14,13 +14,14 @@ const experience = [
       },
     ],
     summary: `
-      Gist Applications is a software company that builds applications for the Shopify ecosystem that helps businesses sell better, and more, online.
-      As part of the team at Gist, I am responsible for delivering scalable, high-value-added features across the tech-stack that enhance the functionality and user experience of thousands of online stores worldwide and their millions of customers.
+      B2B e-commerce SaaS startup in the Shopify ecosystem that helps thousands of businesses sell better online. 
     `,
     responsibilities: [
-      'Build customer-facing widgets that integrate seamlessly with different Shopify storefronts and improve merchant shopping experience and sales, while being mindful of accessibility and responsive design',
-      'Interface with the Shopify GraphQL and REST APIs to query and update store data, alongside handling real-time webhooks to trigger actions and execute back-end business logic following events such as order creation',
-      "Create merchant-facing admin dashboards following Shopify's design systems and provide merchants with intuitive interfaces to manage the app's features, view analytics, and integrate with 3rd party services",
+      'Build customer-facing widgets that integrate seamlessly with different e-commerce storefronts and improve merchant shopping experience and sales, while being mindful of accessibility and responsive design',
+      'Develop merchant-facing admin dashboards following Shopify design systems, providing intuitive interfaces for feature management and customization, analytics, and third-party service integrations',
+      'Iterate rapidly on frontend user interfaces based on user feedback and analytics, ensuring high-performing and reliable product experiences while taking ownership of feature delivery from design to implementation',
+      'Create robust back-end workflows that interface with the Shopify GraphQL and REST APIs alongside real-time webhooks to process core business logic and handle high-volume event triggers',
+      'Deploy and manage application infrastructure on AWS and Cloudflare Workers, ensuring up-to-date API integrations, maintaining version control, and debugging production issues via back-end logs',
     ],
     tags: [
       {
@@ -146,14 +147,19 @@ const experience = [
       {
         title: 'User Interfaces',
         summary: `
-          A collection of various customer and merchant-facing user interfaces implemented across different features and applications.
+          A few examples of customer- and merchant-facing user interfaces implemented across different features and applications.
         `,
         impact: [
+          'Bundle builder flow chart UI',
           'Multiple address cart cart layout',
           'Rules configuration interface',
         ],
         tags: [],
         images: [
+          {
+            src: require('../img/experience/gist-flow.jpeg'),
+            alt: 'bundle flow',
+          },
           {
             src: require('../img/experience/gist-cart.jpg'),
             alt: 'cart layout',
