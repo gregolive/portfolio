@@ -1,4 +1,26 @@
-const personalProjects = [
+import type { Project } from '../../types';
+import bitblogHomeImg from '../img/bitblog/home.jpg';
+import bitblogLoginImg from '../img/bitblog/login.jpg';
+import bitblogDashboardImg from '../img/bitblog/dashboard.jpg';
+import bitblogPostFormImg from '../img/bitblog/post-form.jpg';
+import waldoDashboardImg from '../img/waldo/dashboard.jpg';
+import waldoOuterSpaceImg from '../img/waldo/outer-space.jpg';
+import waldoSkiSlopesImg from '../img/waldo/ski-slopes.jpg';
+import waldoGameOverImg from '../img/waldo/game-over.jpg';
+import tendiesTrackerDashboardImg from '../img/tendies-tracker/dashboard.jpg';
+import tendiesTrackerDashboard2Img from '../img/tendies-tracker/dashboard2.jpg';
+import tendiesTrackerPortfolioImg from '../img/tendies-tracker/portfolio.jpg';
+import tendiesTrackerTransactionViewImg from '../img/tendies-tracker/transaction-view.jpg';
+import tendiesTrackerTransactionsImg from '../img/tendies-tracker/transactions.jpg';
+import battleshipLevelSelectImg from '../img/battleship/level-select.jpg';
+import battleshipPlaceShipsImg from '../img/battleship/place-ships.jpg';
+import battleshipPlayerBoardImg from '../img/battleship/player-board.jpg';
+import battleshipEnemyBoardImg from '../img/battleship/enemy-board.jpg';
+import odinHomeImg from '../img/odin/home.jpg';
+import odinJavascriptImg from '../img/odin/javascript.jpg';
+import odinOverviewImg from '../img/odin/overview.jpg';
+
+const personalProjects: Project[] = [
   /*{
     title: 'Petbook',
     summary: `
@@ -24,7 +46,7 @@ const personalProjects = [
       },
       {
         text: 'MaterialUI',
-        icon: <i class="devicon-materialui-plain colored"></i>,
+        icon: <i className='devicon-materialui-plain colored'></i>,
       },
       {
         text: 'MongoDB',
@@ -97,19 +119,19 @@ const personalProjects = [
     ],
     images: [
       {
-        src: require('../img/bitblog/home.jpg'),
+        src: bitblogHomeImg,
         alt: 'bitblog home screen',
       },
       {
-        src: require('../img/bitblog/login.jpg'),
+        src: bitblogLoginImg,
         alt: 'bitblog login screen',
       },
       {
-        src: require('../img/bitblog/dashboard.jpg'),
+        src: bitblogDashboardImg,
         alt: 'bitblog dashboard',
       },
       {
-        src: require('../img/bitblog/post-form.jpg'),
+        src: bitblogPostFormImg,
         alt: 'bitblog new post form',
       },
     ],
@@ -157,19 +179,19 @@ const personalProjects = [
     ],
     images: [
       {
-        src: require('../img/waldo/dashboard.jpg'),
+        src: waldoDashboardImg,
         alt: 'waldo dashboard',
       },
       {
-        src: require('../img/waldo/outer-space.jpg'),
+        src: waldoOuterSpaceImg,
         alt: 'waldo outer space level',
       },
       {
-        src: require('../img/waldo/ski-slopes.jpg'),
+        src: waldoSkiSlopesImg,
         alt: 'waldo ski slopes level',
       },
       {
-        src: require('../img/waldo/game-over.jpg'),
+        src: waldoGameOverImg,
         alt: 'waldo game over form',
       },
     ],
@@ -216,23 +238,23 @@ const personalProjects = [
     ],
     images: [
       {
-        src: require('../img/tendies-tracker/dashboard.jpg'),
+        src: tendiesTrackerDashboardImg,
         alt: 'tendies tracker dashboard',
       },
       {
-        src: require('../img/tendies-tracker/dashboard2.jpg'),
+        src: tendiesTrackerDashboard2Img,
         alt: 'tendies tracker dashboard 2',
       },
       {
-        src: require('../img/tendies-tracker/portfolio.jpg'),
+        src: tendiesTrackerPortfolioImg,
         alt: 'tendies tracker portfolio view',
       },
       {
-        src: require('../img/tendies-tracker/transaction-view.jpg'),
+        src: tendiesTrackerTransactionViewImg,
         alt: 'tendies tracker transaction view',
       },
       {
-        src: require('../img/tendies-tracker/transactions.jpg'),
+        src: tendiesTrackerTransactionsImg,
         alt: 'tendies tracker all transactions',
       },
     ],
@@ -276,19 +298,19 @@ const personalProjects = [
     ],
     images: [
       {
-        src: require('../img/battleship/level-select.jpg'),
+        src: battleshipLevelSelectImg,
         alt: 'retro battleship level select',
       },
       {
-        src: require('../img/battleship/place-ships.jpg'),
+        src: battleshipPlaceShipsImg,
         alt: 'retro battleship place ships screen',
       },
       {
-        src: require('../img/battleship/player-board.jpg'),
+        src: battleshipPlayerBoardImg,
         alt: 'retro battleship player board',
       },
       {
-        src: require('../img/battleship/enemy-board.jpg'),
+        src: battleshipEnemyBoardImg,
         alt: 'retro battleship enemy board',
       },
     ],
@@ -298,7 +320,7 @@ const personalProjects = [
   },
 ];
 
-const openSourceProjects = [
+const openSourceProjects: Project[] = [
   {
     title: 'The Odin Project',
     summary: `
@@ -308,15 +330,15 @@ const openSourceProjects = [
     `,
     images: [
       {
-        src: require('../img/odin/home.jpg'),
+        src: odinHomeImg,
         alt: 'odin project home screen',
       },
       {
-        src: require('../img/odin/javascript.jpg'),
+        src: odinJavascriptImg,
         alt: 'odin project javascript course',
       },
       {
-        src: require('../img/odin/overview.jpg'),
+        src: odinOverviewImg,
         alt: 'odin project overview',
       },
     ],

@@ -1,15 +1,23 @@
 import StyledSkills, { StyledSkillCol, SkillsGrid } from './StyledSkills';
+import type { ReactNode } from 'react';
+import type { Tag } from '../../../types';
 import { languages, frameworks, tools } from '../../../assets/helpers/skills';
 
-const SkillCol = ({ svg, title, skills }) => {
+interface SkillColProps {
+  svg: ReactNode;
+  title: string;
+  skills: Tag[];
+}
+
+const SkillCol = ({ svg, title, skills }: SkillColProps) => {
   return (
     <StyledSkillCol>
       {svg}
       <h3>{title}</h3>
 
       <SkillsGrid>
-        {skills.map((skill, i) => 
-          <li key={i}>
+        {skills.map((skill) =>
+          <li key={skill.text}>
             {skill.icon}
             {skill.text}
           </li>

@@ -57,7 +57,7 @@ const NavbarLogo = styled.a`
   }
 `;
 
-// Theme swtich
+// Theme switch
 
 const NavbarSwitch = styled.label`
   opacity: 0;

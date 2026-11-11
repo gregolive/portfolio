@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react';
 import styled, { keyframes } from 'styled-components';
 
 const StyledCode = styled.span`
@@ -100,7 +101,12 @@ const StyledCode = styled.span`
   }
 `;
 
-const Code = ({ className, content }) => {
+interface CodeProps {
+  className: string;
+  content: ReactNode;
+}
+
+const Code = ({ className, content }: CodeProps) => {
   return (
     <StyledCode className={className}>
       {content}

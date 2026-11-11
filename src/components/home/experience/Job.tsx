@@ -1,15 +1,20 @@
 import Highlight from './Highlight';
 import { ProjectTags } from '../projects/StyledProjects';
+import type { Job as JobData } from '../../../types';
 import { StyledJob, JobCard, JobHeader, JobLogo, JobRoles, JobDetails, HighlightList } from './StyledExperience';
 
-const Job = ({ job }) => {
+interface JobProps {
+  job: JobData;
+}
+
+const Job = ({ job }: JobProps) => {
   const { company, logo, link, location, color, roles = [], summary, responsibilities = [], tags = [], highlights = [] } = job;
 
   return (
     <StyledJob>
-      <JobCard color={color}>
-        <JobHeader color={color}>
-          <JobLogo color={color}>
+      <JobCard $color={color}>
+        <JobHeader $color={color}>
+          <JobLogo $color={color}>
             {logo ? <img src={logo} alt={`${company} logo`} /> : company.charAt(0)}
           </JobLogo>
 
@@ -21,7 +26,7 @@ const Job = ({ job }) => {
           </div>
         </JobHeader>
 
-        <JobRoles color={color}>
+        <JobRoles $color={color}>
           {roles.map((role, i) =>
             <li key={i}>
               <span className='role-title'>{role.title}</span>
@@ -43,9 +48,9 @@ const Job = ({ job }) => {
           )}
 
           {(tags.length > 0) && (
-            <ProjectTags color={color}>
-              {tags.map((tag, i) =>
-                <span key={i}>
+            <ProjectTags $color={color}>
+              {tags.map((tag) =>
+                <span key={tag.text}>
                   {tag.icon}
                   {tag.text}
                 </span>
@@ -58,8 +63,8 @@ const Job = ({ job }) => {
       {(highlights.length > 0) && (
         <HighlightList>
           <h4 className='highlights-heading'>Shipped features highlights</h4>
-          {highlights.map((highlight, i) =>
-            <Highlight highlight={highlight} color={color} key={i} />
+          {highlights.map((highlight) =>
+            <Highlight highlight={highlight} color={color} key={highlight.title} />
           )}
         </HighlightList>
       )}

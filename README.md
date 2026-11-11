@@ -14,6 +14,7 @@ My personal portfolio outlining my journey to become a web developer.
 ## Technologies & Libraries
 
 - React
+- TypeScript
 - Styled Components
 - EmailJS
 - iTyped

@@ -14,7 +14,7 @@ test('renders each job with its role and highlights', () => {
 
   experience.forEach((job) => {
     expect(screen.getByText(job.company)).toBeInTheDocument();
-    job.roles.forEach((role) => expect(screen.getByText(role.title)).toBeInTheDocument());
-    job.highlights.forEach((highlight) => expect(screen.getByText(highlight.title)).toBeInTheDocument());
+    (job.roles ?? []).forEach((role) => expect(screen.getByText(role.title)).toBeInTheDocument());
+    (job.highlights ?? []).forEach((highlight) => expect(screen.getByText(highlight.title)).toBeInTheDocument());
   });
 });

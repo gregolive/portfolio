@@ -1,8 +1,14 @@
 import ImgCarousel from '../img-carousel/ImgCarousel';
 import { ProjectTitle, ProjectTags } from '../projects/StyledProjects';
 import { StyledHighlight } from './StyledExperience';
+import type { Highlight as HighlightData } from '../../../types';
 
-const Highlight = ({ highlight, color }) => {
+interface HighlightProps {
+  highlight: HighlightData;
+  color: string;
+}
+
+const Highlight = ({ highlight, color }: HighlightProps) => {
   const { title, summary, impact = [], tags = [], images = [] } = highlight;
 
   return (
@@ -10,7 +16,7 @@ const Highlight = ({ highlight, color }) => {
       {(images.length > 0) && <ImgCarousel images={images} color={color} wide />}
 
       <div className='highlight-overview'>
-        <ProjectTitle color={color}>{title}</ProjectTitle>
+        <ProjectTitle $color={color}>{title}</ProjectTitle>
 
         <p>{summary}</p>
 
@@ -21,9 +27,9 @@ const Highlight = ({ highlight, color }) => {
         )}
 
         {(tags.length > 0) && (
-          <ProjectTags color={color}>
-            {tags.map((tag, i) =>
-              <span key={i}>
+          <ProjectTags $color={color}>
+            {tags.map((tag) =>
+              <span key={tag.text}>
                 {tag.icon}
                 {tag.text}
               </span>

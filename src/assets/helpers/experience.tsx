@@ -1,8 +1,17 @@
+import type { Job } from '../../types';
+import experienceGistAppsLogoImg from '../img/experience/gist-apps-logo.jpeg';
+import experienceGistTemplate1Img from '../img/experience/gist-template-1.jpg';
+import experienceGistTemplate2Img from '../img/experience/gist-template-2.jpg';
+import experienceGistOrderingImg from '../img/experience/gist-ordering.jpg';
+import experienceGistFlowImg from '../img/experience/gist-flow.jpeg';
+import experienceGistCartImg from '../img/experience/gist-cart.jpg';
+import experienceGistRulesImg from '../img/experience/gist-rules.jpg';
+
 // Placeholder content, replace with real company details, logo and screenshots
-const experience = [
+const experience: Job[] = [
   {
     company: 'Gist Applications',
-    logo: require('../img/experience/gist-apps-logo.jpeg'),
+    logo: experienceGistAppsLogoImg,
     link: 'https://gist-apps.com/',
     location: 'Victoria, BC, Canada',
     color: '#202e37',
@@ -46,11 +55,11 @@ const experience = [
       },
       {
         text: 'SQL',
-        icon: <i class="devicon-azuresqldatabase-plain"></i>,
+        icon: <i className='devicon-azuresqldatabase-plain'></i>,
       },
       {
         text: 'GraphQL',
-        icon: <i class="devicon-graphql-plain"></i>,
+        icon: <i className='devicon-graphql-plain'></i>,
       },
       {
         text: 'AWS',
@@ -100,11 +109,11 @@ const experience = [
         ],
         images: [
           {
-            src: require('../img/experience/gist-template-1.jpg'),
+            src: experienceGistTemplate1Img,
             alt: 'template builder checkout',
           },
           {
-            src: require('../img/experience/gist-template-2.jpg'),
+            src: experienceGistTemplate2Img,
             alt: 'template builder order printer',
           },
         ],
@@ -139,8 +148,8 @@ const experience = [
         ],
         images: [
           {
-            src: require('../img/experience/gist-ordering.jpg'),
-            alt: 'feature two screenshot 1',
+            src: experienceGistOrderingImg,
+            alt: 'bulk spreadsheet order system',
           },
         ],
       },
@@ -157,15 +166,15 @@ const experience = [
         tags: [],
         images: [
           {
-            src: require('../img/experience/gist-flow.jpeg'),
+            src: experienceGistFlowImg,
             alt: 'bundle flow',
           },
           {
-            src: require('../img/experience/gist-cart.jpg'),
+            src: experienceGistCartImg,
             alt: 'cart layout',
           },
           {
-            src: require('../img/experience/gist-rules.jpg'),
+            src: experienceGistRulesImg,
             alt: 'rules layout',
           },
         ],

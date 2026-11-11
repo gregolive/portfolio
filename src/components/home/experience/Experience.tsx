@@ -11,7 +11,7 @@ const Experience = () => {
         <Code className='p' content={<p>Where I've worked and some of the features I've helped ship.</p>} />
       </div>
       <ExperienceList>
-        {experience.map((job, i) => <Job job={job} key={i} />)}
+        {experience.map((job) => <Job job={job} key={job.company} />)}
       </ExperienceList>
     </StyledSection>
   );

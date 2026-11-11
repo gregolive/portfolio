@@ -1,4 +1,20 @@
-const lightTheme = {
+export interface Theme {
+  primaryColor: string;
+  secondaryColor: string;
+  backgroundColor: string;
+  bgPrimaryColor: string;
+  bgSecondaryColor: string;
+  fontColor: string;
+  textShadowColor: string;
+  borderColor: string;
+  boxShadowColor: string;
+  inputColor: string;
+  placeholderColor: string;
+  headerHighlightColor: string;
+  headerHighlightOpacity: string;
+}
+
+const lightTheme: Theme = {
   primaryColor: '#2924fb',
   secondaryColor: '#fd23de',
   backgroundColor: '#fff',
@@ -14,7 +30,7 @@ const lightTheme = {
   headerHighlightOpacity: '0.08',
 };
 
-const darkTheme = {
+const darkTheme: Theme = {
   primaryColor: '#2924fb',
   secondaryColor: '#fd23de',
   backgroundColor: '#0b132b',

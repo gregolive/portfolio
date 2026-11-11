@@ -40,9 +40,9 @@ const StyledProject = styled.div`
   }
 `;
 
-const ProjectTitle = styled.h3`
+const ProjectTitle = styled.h3<{ $color: string }>`
   font-family: 'Fira Code', monospace;
-  color: ${(props) => props.color};
+  color: ${(props) => props.$color};
   font-size: 1.65rem;
   margin: 0;
   display: flex;
@@ -72,7 +72,7 @@ const ProjectLinks = styled.div`
   }
 `;
 
-const ProjectTags = styled.div`
+const ProjectTags = styled.div<{ $color: string }>`
   font-family: 'Fira Code', monospace;
   font-size: 0.9rem;
   font-weight: 300;
@@ -82,9 +82,9 @@ const ProjectTags = styled.div`
   gap: 0.5rem;
 
   span {
-    color: ${(props) => props.color};
+    color: ${(props) => props.$color};
     background: ${(props) => props.theme.backgroundColor};
-    border: 1px solid ${(props) => props.color};
+    border: 1px solid ${(props) => props.$color};
     border-radius: 1rem;
     padding: 0.3rem 0.7rem;
     display: flex;
@@ -97,7 +97,7 @@ const ProjectTags = styled.div`
 
   span:hover {
     color: ${(props) => props.theme.backgroundColor};
-    background: ${(props) => props.color};
+    background: ${(props) => props.$color};
   }
 
   span i {

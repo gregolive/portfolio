@@ -1,4 +1,5 @@
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
+import type { MouseEvent } from 'react';
 import styled from 'styled-components';
 import StyledButton from '../button/StyledButton';
 import doodle from '../../assets/img/doodle.png';
@@ -56,24 +57,34 @@ const MsgContainer = styled.div`
   }
 `;
 
-const SuccessMsg = ({ setShowMsg }) => {
-  const background = useRef();
+interface SuccessMsgProps {
+  setShowMsg: (show: boolean) => void;
+}
 
-  const handleClick = (e) => {
+const SuccessMsg = ({ setShowMsg }: SuccessMsgProps) => {
+  const background = useRef<HTMLDivElement>(null);
+
+  const handleClick = (e: MouseEvent<HTMLDivElement>) => {
     if (e.target === background.current) { setShowMsg(false); }
   };
 
+  useEffect(() => {
+    const onKeyDown = (e: KeyboardEvent) => { if (e.key === 'Escape') setShowMsg(false); };
+    window.addEventListener('keydown', onKeyDown);
+    return () => window.removeEventListener('keydown', onKeyDown);
+  }, [setShowMsg]);
+
   return (
-    <StyledSuccessMsg ref={background} onClick={handleClick}>
+    <StyledSuccessMsg ref={background} onClick={handleClick} role='dialog' aria-modal='true' aria-labelledby='success-msg-title'>
       <MsgContainer>
         <img src={doodle} alt='success doodle' />
 
         <div>
-          <h4>Thanks for reaching out!</h4>
+          <h4 id='success-msg-title'>Thanks for reaching out!</h4>
           <p>I'll get back to you as soon as I can.</p>
         </div>
         
-        <StyledButton type='button' onClick={() => setShowMsg(false)}>Close</StyledButton>
+        <StyledButton type='button' onClick={() => setShowMsg(false)} autoFocus>Close</StyledButton>
       </MsgContainer>
     </StyledSuccessMsg>
   );

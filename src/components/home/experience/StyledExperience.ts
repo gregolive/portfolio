@@ -12,10 +12,10 @@ const StyledJob = styled.article`
   gap: 2.5rem;
 `;
 
-const JobCard = styled.div`
+const JobCard = styled.div<{ $color: string }>`
   background: ${(props) => props.theme.backgroundColor};
   border: 1px solid ${(props) => props.theme.borderColor};
-  border-top: 4px solid ${(props) => props.color};
+  border-top: 4px solid ${(props) => props.$color};
   border-radius: 0.5rem;
   box-shadow: 1px 1px 5px ${(props) => props.theme.boxShadowColor};
   padding: 1.5rem 2rem;
@@ -27,7 +27,7 @@ const JobCard = styled.div`
   }
 `;
 
-const JobHeader = styled.div`
+const JobHeader = styled.div<{ $color: string }>`
   display: grid;
   grid-template-columns: auto 1fr;
   align-items: center;
@@ -41,7 +41,7 @@ const JobHeader = styled.div`
 
   .job-company h3 {
     font-family: 'Fira Code', monospace;
-    color: ${(props) => props.color};
+    color: ${(props) => props.$color};
     font-size: 1.65rem;
     margin: 0;
   }
@@ -63,7 +63,7 @@ const JobHeader = styled.div`
   }
 `;
 
-const JobLogo = styled.div`
+const JobLogo = styled.div<{ $color: string }>`
   background: ${(props) => props.theme.inputColor};
   border: 1px solid ${(props) => props.theme.borderColor};
   border-radius: 0.5rem;
@@ -76,7 +76,7 @@ const JobLogo = styled.div`
   font-family: 'Fira Code', monospace;
   font-size: 1.75rem;
   font-weight: 500;
-  color: ${(props) => props.color};
+  color: ${(props) => props.$color};
 
   img {
     height: 100%;
@@ -85,11 +85,11 @@ const JobLogo = styled.div`
   }
 `;
 
-const JobRoles = styled.ul`
+const JobRoles = styled.ul<{ $color: string }>`
   list-style: none;
   margin: 0;
   padding: 0 0 0 1.25rem;
-  border-left: 2px solid ${(props) => props.color};
+  border-left: 2px solid ${(props) => props.$color};
   display: grid;
   gap: 0.75rem;
 
@@ -101,7 +101,7 @@ const JobRoles = styled.ul`
 
   li:before {
     content: '';
-    background: ${(props) => props.color};
+    background: ${(props) => props.$color};
     border-radius: 50%;
     height: 0.75rem;
     width: 0.75rem;

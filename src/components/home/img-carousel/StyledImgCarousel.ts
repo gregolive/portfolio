@@ -1,6 +1,6 @@
 import styled, { keyframes } from 'styled-components';
 
-const StyledCarousel = styled.div`
+const StyledCarousel = styled.div<{ $color: string }>`
   position: relative;
 
   button {
@@ -13,7 +13,7 @@ const StyledCarousel = styled.div`
   }
 
   button:hover {
-    color: ${(props) => props.color};
+    color: ${(props) => props.$color};
     opacity: 1;
   }
 
@@ -67,7 +67,7 @@ const slideOutRight = keyframes`
   to { transform: translateX(calc(100% + 1rem)); visibility: hidden; }
 `;
 
-const ImgSlide = styled.div`
+const ImgSlide = styled.div<{ $wide: boolean }>`
   grid-area: 1 / 1;
   align-self: center;
   visibility: hidden;
@@ -98,7 +98,7 @@ const ImgSlide = styled.div`
     border-radius: 0.5rem;
     box-shadow: 1px 1px 5px ${(props) => props.theme.boxShadowColor};
     display: block;
-    ${(props) => props.wide ? `
+    ${(props) => props.$wide ? `
       width: 100%;
       height: auto;
       max-height: 28rem;
@@ -111,15 +111,15 @@ const ImgSlide = styled.div`
 `;
 
 const NavDots = styled.div`
-margin-top: 0.25rem;
-  height: var(--dot-div-height);
+  margin-top: 0.25rem;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 0.4rem;
 `;
 
-const Dot = styled.span`
+const Dot = styled.button<{ $color: string }>`
+  padding: 0;
   background: ${(props) => props.theme.boxShadowColor};
   border-radius: 50%;
   height: 0.75rem;
@@ -128,7 +128,12 @@ const Dot = styled.span`
   transition: 0.4s;
 
   &.active, &:hover {
-    background: ${(props) => props.color};
+    background: ${(props) => props.$color};
+  }
+
+  &:focus-visible {
+    outline: 2px solid ${(props) => props.$color};
+    outline-offset: 2px;
   }
 `;
 

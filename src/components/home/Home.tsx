@@ -5,7 +5,11 @@ import Experience from './experience/Experience';
 import Contact from './contact/Contact';
 import TopBtn from './top-btn/TopBtn';
 
-const Home = ({ scroll }) => {
+interface HomeProps {
+  scroll: number;
+}
+
+const Home = ({ scroll }: HomeProps) => {
   return (
     <>
       <Banner />

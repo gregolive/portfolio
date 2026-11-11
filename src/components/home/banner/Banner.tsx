@@ -4,12 +4,16 @@ import StyledBanner, { Console, Arrows } from './StyledBanner';
 import { Code } from '../../styled/Styled';
 
 const Banner = () => {
-  const titleRef = useRef();
+  const titleRef = useRef<HTMLSpanElement>(null);
+  const started = useRef(false);
   useEffect(() => {
+    // ityped has no teardown, so only start it once (StrictMode runs effects twice in dev)
+    if (!titleRef.current || started.current) return;
+    started.current = true;
     init(titleRef.current, {
       showCursor: false,
       strings: ['Fullstack developer', 'OS Contributor', 'Designer'],
-      typeSpeed:  100,
+      typeSpeed: 100,
       backDelay: 2000,
       backSpeed: 60,
     });

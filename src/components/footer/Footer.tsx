@@ -4,7 +4,7 @@ import SocialLinks from '../links/Links';
 const Footer = () => {
   return (
     <StyledFooter>
-      <FooterLogo>go</FooterLogo>
+      <FooterLogo href='#'>go</FooterLogo>
       <SocialLinks email={false} />
       <small>Built with care by @gregolive</small>
     </StyledFooter>

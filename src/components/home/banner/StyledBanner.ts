@@ -99,7 +99,7 @@ const scrollDown = keyframes`
 `;
 
 const Arrows = styled.div`
-  color: color: ${(props) => props.theme.fontColor};
+  color: ${(props) => props.theme.fontColor};
 
   svg {
     opacity: 0;

@@ -1,4 +1,6 @@
-const languages = [
+import type { Tag } from '../../types';
+
+const languages: Tag[] = [
   {
     text: 'Javascript',
     icon: <i className='devicon-javascript-plain colored'></i>,
@@ -9,11 +11,11 @@ const languages = [
   },
   {
     text: 'PHP',
-    icon: <i class="devicon-php-plain colored"></i>,
+    icon: <i className='devicon-php-plain colored'></i>,
   },
   {
     text: 'SQL',
-    icon: <i class="devicon-azuresqldatabase-plain colored"></i>,
+    icon: <i className='devicon-azuresqldatabase-plain colored'></i>,
   },
   {
     text: 'CSS',
@@ -25,22 +27,22 @@ const languages = [
   },
 ];
 
-const frameworks = [
+const frameworks: Tag[] = [
   {
     text: 'React',
     icon: <i className='devicon-react-original colored'></i>,
   },
   {
     text: 'React Native',
-    icon: <i class="devicon-reactnative-original colored"></i>,
+    icon: <i className='devicon-reactnative-original colored'></i>,
   },
   {
     text: 'Symfony',
-    icon: <i class="devicon-symfony-original colored"></i>,
+    icon: <i className='devicon-symfony-original colored'></i>,
   },
   {
     text: 'Remix',
-    icon: <i class="devicon-remix-original colored"></i>,
+    icon: <i className='devicon-remix-original colored'></i>,
   },
   {
     text: 'Jest',
@@ -52,14 +54,14 @@ const frameworks = [
   },
 ];
 
-const tools = [
+const tools: Tag[] = [
   {
     text: 'AWS',
     icon: <i className='devicon-amazonwebservices-plain-wordmark colored'></i>,
   },
   {
     text: 'Cloudflare',
-    icon: <i class="devicon-cloudflare-plain colored"></i>,
+    icon: <i className='devicon-cloudflare-plain colored'></i>,
   },
   {
     text: 'Git',
@@ -71,11 +73,11 @@ const tools = [
   },
   {
     text: 'Storybook',
-    icon: <i class="devicon-storybook-plain colored"></i>,
+    icon: <i className='devicon-storybook-plain colored'></i>,
   },
   {
     text: 'Yarn',
-    icon: <i class="devicon-yarn-original colored"></i>,
+    icon: <i className='devicon-yarn-original colored'></i>,
   },
 ];
 

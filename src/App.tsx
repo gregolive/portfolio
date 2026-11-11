@@ -10,26 +10,42 @@ const StyledApp = styled.div`
   color: ${(props) => props.theme.fontColor};
 `;
 
+const getInitialDark = (): boolean => {
+  try {
+    const stored = localStorage.getItem('dark');
+    if (stored !== null) return stored === 'true';
+  } catch {
+    // localStorage can be unavailable (private mode, blocked storage)
+  }
+  return window.matchMedia?.('(prefers-color-scheme: dark)').matches ?? false;
+};
+
 const App = () => {
-  const [theme, setTheme] = useState((JSON.parse(localStorage.getItem('dark'))) ? darkTheme : lightTheme);
+  const [dark, setDark] = useState<boolean>(getInitialDark);
   const [scroll, setScroll] = useState(0);
 
   const toggleTheme = () => {
-    (theme === lightTheme) ? localStorage.setItem('dark', true) : localStorage.setItem('dark', false);
-    (theme === lightTheme) ? setTheme(darkTheme) : setTheme(lightTheme);
+    setDark((prev) => {
+      const next = !prev;
+      try {
+        localStorage.setItem('dark', String(next));
+      } catch {
+        // ignore storage failures; the theme still toggles for this visit
+      }
+      return next;
+    });
   };
 
-  const handleScroll = () => setScroll(window.scrollY);
-
   useEffect(() => {
+    const handleScroll = () => setScroll(window.scrollY);
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={dark ? darkTheme : lightTheme}>
       <StyledApp>
-        <Header toggleTheme={toggleTheme} scroll={scroll} dark={(theme === darkTheme)} />
+        <Header toggleTheme={toggleTheme} scroll={scroll} dark={dark} />
         <Home scroll={scroll} />
         <Footer />
       </StyledApp>
