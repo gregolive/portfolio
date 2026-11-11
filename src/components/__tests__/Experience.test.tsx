@@ -1,5 +1,4 @@
 import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom';
 import { ThemeProvider } from 'styled-components';
 import { lightTheme } from '../../assets/themes/themes';
 import Experience from '../home/experience/Experience';

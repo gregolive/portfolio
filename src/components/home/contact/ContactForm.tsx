@@ -32,7 +32,7 @@ const ContactForm = () => {
     }
 
     setLoading(true);
-    emailjs.sendForm(process.env.REACT_APP_SERVICE_ID, process.env.REACT_APP_TEMPLATE_ID, formEl, process.env.REACT_APP_PUBLIC_KEY)
+    emailjs.sendForm(import.meta.env.VITE_EMAILJS_SERVICE_ID, import.meta.env.VITE_EMAILJS_TEMPLATE_ID, formEl, import.meta.env.VITE_EMAILJS_PUBLIC_KEY)
       .then(() => {
         setShowMsg(true);
         formEl.reset();
