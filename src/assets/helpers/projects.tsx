@@ -41,7 +41,7 @@ const personalProjects: Project[] = [
         icon: <i className='devicon-heroku-original'></i>,
       },
       {
-        text: 'Javascript',
+        text: 'JavaScript',
         icon: <i className='devicon-javascript-plain'></i>,
       },
       {
@@ -65,7 +65,7 @@ const personalProjects: Project[] = [
         icon: <i className='devicon-react-original'></i>,
       },
       {
-        text: 'Typescript',
+        text: 'TypeScript',
         icon: <i className='devicon-typescript-plain'></i>,
       },
     ],
@@ -101,7 +101,7 @@ const personalProjects: Project[] = [
         icon: <i className='devicon-heroku-original'></i>,
       },
       {
-        text: 'Javascript',
+        text: 'JavaScript',
         icon: <i className='devicon-javascript-plain'></i>,
       },
       {
@@ -144,8 +144,8 @@ const personalProjects: Project[] = [
     summary: `
       Search for Waldo and friends in this online version of the classic books.
       This is a multi-technology app with a React frontend and a Ruby on Rails backend.
-      The React client deployed with Github pages makes calls to the Rails API deployed on Heroku where images, map data, and other assets are stored.
-      On each of the 6 levels, users must find 4 waldo characters hidden throughout the map and are presented with a form to submit their solve time.
+      The React client deployed with GitHub Pages makes calls to the Rails API deployed on Heroku where images, map data, and other assets are stored.
+      On each of the 6 levels, users must find 4 Waldo characters hidden throughout the map and are presented with a form to submit their solve time.
     `,
     tags: [
       {
@@ -157,7 +157,7 @@ const personalProjects: Project[] = [
         icon: <i className='devicon-heroku-original'></i>,
       },
       {
-        text: 'Javascript',
+        text: 'JavaScript',
         icon: <i className='devicon-javascript-plain'></i>,
       },
       {
@@ -203,7 +203,7 @@ const personalProjects: Project[] = [
     title: 'Tendies Tracker',
     summary: `
       A full-stack app to track your stock holdings, created with Express, MongoDB, and more.
-      The platform provides real-time stock data from finnhub to ensure that users stay up to date on their portfolio.
+      The platform provides real-time stock data from Finnhub to ensure that users stay up to date on their portfolio.
       Features secure user authentication with hashed and salted passwords, a dashboard that provides daily and all-time portfolio statistics, and a portfolio page with a full portfolio breakdown, down to each holding.
     `,
     tags: [
@@ -224,7 +224,7 @@ const personalProjects: Project[] = [
         icon: <i className='devicon-heroku-original'></i>,
       },
       {
-        text: 'Javascript',
+        text: 'JavaScript',
         icon: <i className='devicon-javascript-plain'></i>,
       },
       {
@@ -280,7 +280,7 @@ const personalProjects: Project[] = [
         icon: <i className='devicon-html5-plain'></i>,
       },
       {
-        text: 'Javascript',
+        text: 'JavaScript',
         icon: <i className='devicon-javascript-plain'></i>,
       },
       {

@@ -12,7 +12,7 @@ const Banner = () => {
     started.current = true;
     init(titleRef.current, {
       showCursor: false,
-      strings: ['Fullstack developer', 'OS Contributor', 'Designer'],
+      strings: ['Full-stack developer', 'OS Contributor', 'Designer'],
       typeSpeed: 100,
       backDelay: 2000,
       backSpeed: 60,

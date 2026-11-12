@@ -2,11 +2,11 @@ import type { Tag } from '../../types';
 
 const languages: Tag[] = [
   {
-    text: 'Javascript',
+    text: 'JavaScript',
     icon: <i className='devicon-javascript-plain colored'></i>,
   },
   {
-    text: 'Typescript',
+    text: 'TypeScript',
     icon: <i className='devicon-typescript-plain colored'></i>,
   },
   {

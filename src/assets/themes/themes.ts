@@ -1,4 +1,5 @@
 export interface Theme {
+  isDark: boolean;
   primaryColor: string;
   secondaryColor: string;
   backgroundColor: string;
@@ -15,6 +16,7 @@ export interface Theme {
 }
 
 const lightTheme: Theme = {
+  isDark: false,
   primaryColor: '#2924fb',
   secondaryColor: '#fd23de',
   backgroundColor: '#fff',
@@ -31,6 +33,7 @@ const lightTheme: Theme = {
 };
 
 const darkTheme: Theme = {
+  isDark: true,
   primaryColor: '#2924fb',
   secondaryColor: '#fd23de',
   backgroundColor: '#0b132b',

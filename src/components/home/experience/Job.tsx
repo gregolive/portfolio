@@ -1,4 +1,5 @@
 import Highlight from './Highlight';
+import useAccent from '../../../hooks/useAccent';
 import { ProjectTags } from '../projects/StyledProjects';
 import type { Job as JobData } from '../../../types';
 import { StyledJob, JobCard, JobHeader, JobLogo, JobRoles, JobDetails, HighlightList } from './StyledExperience';
@@ -8,7 +9,8 @@ interface JobProps {
 }
 
 const Job = ({ job }: JobProps) => {
-  const { company, logo, link, location, color, roles = [], summary, responsibilities = [], tags = [], highlights = [] } = job;
+  const { company, logo, link, location, color: brandColor, darkColor, roles = [], summary, responsibilities = [], tags = [], highlights = [] } = job;
+  const color = useAccent(brandColor, darkColor);
 
   return (
     <StyledJob>
@@ -62,7 +64,7 @@ const Job = ({ job }: JobProps) => {
 
       {(highlights.length > 0) && (
         <HighlightList>
-          <h4 className='highlights-heading'>Shipped features highlights</h4>
+          <h4 className='highlights-heading'>Shipped feature highlights</h4>
           {highlights.map((highlight) =>
             <Highlight highlight={highlight} color={color} key={highlight.title} />
           )}

@@ -16,6 +16,8 @@ export interface Project {
   tags?: Tag[];
   images: CarouselImage[];
   color: string;
+  /** Lighter brand color used in dark mode when `color` is too dark to read */
+  darkColor?: string;
   repo: string;
   link: string;
 }
@@ -40,6 +42,8 @@ export interface Job {
   link?: string;
   location?: string;
   color: string;
+  /** Lighter brand color used in dark mode when `color` is too dark to read */
+  darkColor?: string;
   roles?: Role[];
   summary?: string;
   responsibilities?: string[];

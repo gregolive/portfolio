@@ -7,7 +7,6 @@ import experienceGistFlowImg from '../img/experience/gist-flow.jpeg';
 import experienceGistCartImg from '../img/experience/gist-cart.jpg';
 import experienceGistRulesImg from '../img/experience/gist-rules.jpg';
 
-// Placeholder content, replace with real company details, logo and screenshots
 const experience: Job[] = [
   {
     company: 'Gist Applications',
@@ -15,6 +14,7 @@ const experience: Job[] = [
     link: 'https://gist-apps.com/',
     location: 'Victoria, BC, Canada',
     color: '#202e37',
+    darkColor: '#1fbfa3', // teal from the Gist logo, readable on the dark background
     roles: [
       {
         title: 'Full-Stack Developer',
@@ -38,11 +38,11 @@ const experience: Job[] = [
         icon: <i className='devicon-react-original'></i>,
       },
       {
-        text: 'Typescript',
+        text: 'TypeScript',
         icon: <i className='devicon-typescript-plain'></i>,
       },
       {
-        text: 'Javascript',
+        text: 'JavaScript',
         icon: <i className='devicon-javascript-plain'></i>,
       },
       {
@@ -95,7 +95,7 @@ const experience: Job[] = [
             icon: <i className='devicon-react-original'></i>,
           },
           {
-            text: 'Typescript',
+            text: 'TypeScript',
             icon: <i className='devicon-typescript-plain'></i>
           },
           {
@@ -121,7 +121,7 @@ const experience: Job[] = [
       {
         title: 'Bulk Spreadsheet Order System',
         summary: `
-          A spreadsheet-based order creation system that allows for merchants or their customer's to efficiently create a large number of orders at the same time.
+          A spreadsheet-based order creation system that allows merchants or their customers to efficiently create a large number of orders at the same time.
         `,
         impact: [
           'High-value feature for both merchants who save time and for our company, as merchants are charged per order created',
@@ -134,7 +134,7 @@ const experience: Job[] = [
             icon: <i className='devicon-react-original'></i>,
           },
           {
-            text: 'Typescript',
+            text: 'TypeScript',
             icon: <i className='devicon-typescript-plain'></i>
           },
           {
@@ -160,7 +160,7 @@ const experience: Job[] = [
         `,
         impact: [
           'Bundle builder flow chart UI',
-          'Multiple address cart cart layout',
+          'Multiple address cart layout',
           'Rules configuration interface',
         ],
         tags: [],
