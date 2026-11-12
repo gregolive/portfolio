@@ -5,20 +5,16 @@ import Experience from './experience/Experience';
 import Contact from './contact/Contact';
 import TopBtn from './top-btn/TopBtn';
 
-interface HomeProps {
-  scroll: number;
-}
-
-const Home = ({ scroll }: HomeProps) => {
+const Home = () => {
   return (
-    <>
+    <main>
       <Banner />
       <Bio />
       <Skills />
       <Experience />
       <Contact />
-      <TopBtn scroll={scroll} />
-    </>
+      <TopBtn />
+    </main>
   );
 };
 

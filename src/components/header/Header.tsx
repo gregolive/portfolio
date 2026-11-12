@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
+import useActiveSection from '../../hooks/useActiveSection';
 import StyledHeader, { NavbarLogo, NavbarSwitch, Slider, SwitchIcon, NavbarBurger, NavbarMenu, NavbarLink } from './StyledHeader';
 
 const sections = [
@@ -7,32 +8,21 @@ const sections = [
   { id: 'contact', label: 'Contact' },
 ];
 
+const SECTION_IDS = sections.map(({ id }) => id);
+
 // A section is active once its top passes this offset (header height plus some breathing room)
 const ACTIVE_OFFSET = 200;
 
 interface NavProps {
   toggleTheme: () => void;
   dark: boolean;
-  scroll: number;
 }
 
-const Nav = ({ toggleTheme, dark, scroll }: NavProps) => {
+const Nav = ({ toggleTheme, dark }: NavProps) => {
   const [menu, setMenu] = useState(false);
-  const [active, setActive] = useState('');
+  const active = useActiveSection(SECTION_IDS, ACTIVE_OFFSET);
   const toggleMenu = () => setMenu((open) => !open);
   const closeMenu = () => setMenu(false);
-
-  useEffect(() => {
-    const atBottom = window.innerHeight + scroll >= document.documentElement.scrollHeight - 2;
-    let current = '';
-
-    sections.forEach(({ id }) => {
-      const el = document.getElementById(id);
-      if (el && el.getBoundingClientRect().top <= ACTIVE_OFFSET) current = id;
-    });
-
-    setActive(atBottom ? sections[sections.length - 1].id : current);
-  }, [scroll]);
 
   return (
     <StyledHeader>

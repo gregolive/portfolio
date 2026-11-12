@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import styled, { ThemeProvider } from 'styled-components';
 import { lightTheme, darkTheme } from './assets/themes/themes';
 import Header from './components/header/Header';
@@ -22,7 +22,6 @@ const getInitialDark = (): boolean => {
 
 const App = () => {
   const [dark, setDark] = useState<boolean>(getInitialDark);
-  const [scroll, setScroll] = useState(0);
 
   const toggleTheme = () => {
     setDark((prev) => {
@@ -36,17 +35,11 @@ const App = () => {
     });
   };
 
-  useEffect(() => {
-    const handleScroll = () => setScroll(window.scrollY);
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   return (
     <ThemeProvider theme={dark ? darkTheme : lightTheme}>
       <StyledApp>
-        <Header toggleTheme={toggleTheme} scroll={scroll} dark={dark} />
-        <Home scroll={scroll} />
+        <Header toggleTheme={toggleTheme} dark={dark} />
+        <Home />
         <Footer />
       </StyledApp>
     </ThemeProvider>
