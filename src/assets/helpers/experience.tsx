@@ -110,11 +110,13 @@ const experience: Job[] = [
         images: [
           {
             src: experienceGistTemplate1Img,
-            alt: 'template builder checkout',
+            alt: 'Template builder editing a textarea field on a checkout form, beside a live order summary preview',
+            caption: 'Checkout form fields editor',
           },
           {
             src: experienceGistTemplate2Img,
-            alt: 'template builder order printer',
+            alt: 'Template builder with a nested tree of rows, columns and blocks beside a live packing slip preview',
+            caption: 'Packing slip template',
           },
         ],
       },
@@ -149,7 +151,8 @@ const experience: Job[] = [
         images: [
           {
             src: experienceGistOrderingImg,
-            alt: 'bulk spreadsheet order system',
+            alt: 'Spreadsheet for creating a multi-address order, with products, gift messages and a shipping address on each row',
+            caption: 'Multi-address order spreadsheet',
           },
         ],
       },
@@ -167,15 +170,18 @@ const experience: Job[] = [
         images: [
           {
             src: experienceGistFlowImg,
-            alt: 'bundle flow',
+            alt: 'Bundle builder flow chart of product, form, condition and collection steps branching on true or false',
+            caption: 'Bundle builder flow chart',
           },
           {
             src: experienceGistCartImg,
-            alt: 'cart layout',
+            alt: 'Cart shipping two products to different saved addresses',
+            caption: 'Multiple address cart',
           },
           {
             src: experienceGistRulesImg,
-            alt: 'rules layout',
+            alt: 'Rule editor that hides the Standard delivery method when the delivery-method attribute equals express',
+            caption: 'Rules configuration',
           },
         ],
       },
