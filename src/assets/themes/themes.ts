@@ -9,6 +9,7 @@ export interface Theme {
   textShadowColor: string;
   borderColor: string;
   boxShadowColor: string;
+  elevatedShadow: string;
   inputColor: string;
   placeholderColor: string;
   headerHighlightColor: string;
@@ -26,6 +27,7 @@ const lightTheme: Theme = {
   textShadowColor: '#2924fb',
   borderColor: '#e6ecf8',
   boxShadowColor: 'rgba(0,0,0,0.1)',
+  elevatedShadow: '0 12px 32px rgba(11, 19, 43, 0.12)',
   inputColor: '#f5f5fa',
   placeholderColor: '#adadb8',
   headerHighlightColor: '#2924fb',
@@ -43,6 +45,7 @@ const darkTheme: Theme = {
   textShadowColor: '#fff',
   borderColor: 'rgba(255,255,255,0.5)',
   boxShadowColor: 'rgba(255,255,255,0.75)',
+  elevatedShadow: '0 12px 32px rgba(0, 0, 0, 0.5)',
   inputColor: '#152451',
   placeholderColor: '#5e5e66',
   headerHighlightColor: '#fff',

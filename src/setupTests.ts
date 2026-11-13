@@ -1,5 +1,11 @@
 import '@testing-library/jest-dom/vitest';
 
+// jsdom has no AnimationEvent, which makes React listen for `webkitAnimationEnd` instead of the
+// `animationend` real browsers fire. Defining it (before React loads) keeps tests on the real event.
+if (!('AnimationEvent' in window)) {
+  (window as unknown as { AnimationEvent: typeof Event }).AnimationEvent = class AnimationEvent extends Event {};
+}
+
 // jsdom doesn't implement IntersectionObserver
 if (!window.IntersectionObserver) {
   window.IntersectionObserver = class {

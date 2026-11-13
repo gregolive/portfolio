@@ -8,6 +8,8 @@ export interface Tag {
 export interface CarouselImage {
   src: string;
   alt: string;
+  /** Shown in the carousel window bar and the lightbox; defaults to the alt text */
+  caption?: string;
 }
 
 export interface Project {
