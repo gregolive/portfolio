@@ -1,7 +1,7 @@
-import { Code, StyledSection } from '../../styled/Styled';
+import { Code, StyledSection } from '@/components/styled/Styled';
 import Job from './Job';
 import { ExperienceList } from './StyledExperience';
-import { experience } from '../../../assets/helpers/experience';
+import { experience } from '@/assets/helpers/experience';
 
 const Experience = () => {
   return (

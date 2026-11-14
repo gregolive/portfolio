@@ -1,8 +1,8 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import { ThemeProvider } from 'styled-components';
 import emailjs from '@emailjs/browser';
-import { lightTheme } from '../../assets/themes/themes';
-import ContactForm from '../home/contact/ContactForm';
+import { lightTheme } from '@/assets/themes/themes';
+import ContactForm from '@/components/home/contact/ContactForm';
 
 vi.mock('@emailjs/browser', () => ({ default: { sendForm: vi.fn() } }));
 const sendForm = vi.mocked(emailjs.sendForm);

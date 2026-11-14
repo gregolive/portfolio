@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { gradient } from '../styled/Styled';
+import { gradient } from '@/components/styled/Styled';
 
 const StyledFooter = styled.footer`
   color: white;

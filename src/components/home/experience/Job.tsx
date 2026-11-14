@@ -1,7 +1,7 @@
 import Highlight from './Highlight';
-import useAccent from '../../../hooks/useAccent';
-import { ProjectTags } from '../projects/StyledProjects';
-import type { Job as JobData } from '../../../types';
+import useAccent from '@/hooks/useAccent';
+import { ProjectTags } from '@/components/home/projects/StyledProjects';
+import type { Job as JobData } from '@/types';
 import { StyledJob, JobCard, JobHeader, JobLogo, JobRoles, JobDetails, JobHighlights, HighlightList } from './StyledExperience';
 
 interface JobProps {

@@ -1,5 +1,5 @@
 import StyledLinks, { StyledLink } from './StyledLinks';
-import { RESUME_URL } from '../../assets/helpers/links';
+import { RESUME_URL } from '@/assets/helpers/links';
 
 interface LinksProps {
   email?: boolean;

@@ -2,9 +2,9 @@ import { useRef, useState } from 'react';
 import type { FocusEvent, FormEvent } from 'react';
 import emailjs from '@emailjs/browser';
 import StyledContactForm, { StyledInput, StyledTextarea, ErrorMsg, Honeypot } from './StyledContactForm';
-import StyledButton from '../../button/StyledButton';
-import Loading from '../../loading/Loading';
-import SuccessMsg from '../../loading/SuccessMsg';
+import StyledButton from '@/components/button/StyledButton';
+import Loading from '@/components/loading/Loading';
+import SuccessMsg from '@/components/loading/SuccessMsg';
 
 const INVALID_EMAIL = 'Invalid email address';
 

@@ -1,6 +1,6 @@
-import useTypewriter from '../../../hooks/useTypewriter';
+import useTypewriter from '@/hooks/useTypewriter';
 import StyledBanner, { Console, Arrows } from './StyledBanner';
-import { Code } from '../../styled/Styled';
+import { Code } from '@/components/styled/Styled';
 
 const TITLES = ['Full-stack developer', 'OS Contributor', 'Designer'];
 

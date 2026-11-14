@@ -1,11 +1,11 @@
-import type { Job } from '../../types';
-import experienceGistAppsLogoImg from '../img/gist/gist-apps-logo.jpeg';
-import experienceGistTemplate1Img from '../img/gist/gist-template-1.jpg';
-import experienceGistTemplate2Img from '../img/gist/gist-template-2.jpg';
-import experienceGistOrderingImg from '../img/gist/gist-ordering.jpg';
-import experienceGistFlowImg from '../img/gist/gist-flow.jpeg';
-import experienceGistCartImg from '../img/gist/gist-cart.jpg';
-import experienceGistRulesImg from '../img/gist/gist-rules.jpg';
+import type { Job } from '@/types';
+import experienceGistAppsLogoImg from '@/assets/img/gist/gist-apps-logo.jpeg';
+import experienceGistTemplate1Img from '@/assets/img/gist/gist-template-1.jpg';
+import experienceGistTemplate2Img from '@/assets/img/gist/gist-template-2.jpg';
+import experienceGistOrderingImg from '@/assets/img/gist/gist-ordering.jpg';
+import experienceGistFlowImg from '@/assets/img/gist/gist-flow.jpeg';
+import experienceGistCartImg from '@/assets/img/gist/gist-cart.jpg';
+import experienceGistRulesImg from '@/assets/img/gist/gist-rules.jpg';
 
 const experience: Job[] = [
   {

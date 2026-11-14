@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import accentCard from '../../styled/card';
+import accentCard from '@/components/styled/card';
 
 // Shared by the Responsibilities, Skills and Shipped feature highlights headings
 const detailHeading = css`

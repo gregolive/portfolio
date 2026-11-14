@@ -6,6 +6,10 @@ export default defineConfig({
   // Served from https://gregolive.github.io/portfolio/
   base: '/portfolio/',
   plugins: [react()],
+  // `@/` imports resolve to src/ using the paths in tsconfig.json
+  resolve: {
+    tsconfigPaths: true,
+  },
   build: {
     // Keep CRA's output folder so the gh-pages deploy script is unchanged
     outDir: 'build',

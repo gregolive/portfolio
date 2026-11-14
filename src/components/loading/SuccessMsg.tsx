@@ -1,8 +1,8 @@
 import { useRef, useEffect } from 'react';
 import type { MouseEvent } from 'react';
 import styled from 'styled-components';
-import StyledButton from '../button/StyledButton';
-import doodle from '../../assets/img/doodle.png';
+import StyledButton from '@/components/button/StyledButton';
+import doodle from '@/assets/img/doodle.png';
 
 const StyledSuccessMsg = styled.div`
   background: rgba(0, 0, 0, 0.8);

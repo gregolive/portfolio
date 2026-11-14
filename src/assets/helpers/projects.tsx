@@ -10,18 +10,18 @@
  * Last Modified: Sat Nov 14 2026
  */
 
-import type { Project } from '../../types';
-import jwotdTodayImg from '../img/japanese-word/today-light.jpg';
-import jwotdTodayDarkImg from '../img/japanese-word/today-dark.jpg';
-import jwotdDefinitionImg from '../img/japanese-word/definition-light.jpg';
-import jwotdDefinitionDarkImg from '../img/japanese-word/definition-dark.jpg';
-import jwotdSentencesImg from '../img/japanese-word/sentences-light.jpg';
-import jwotdSentencesDarkImg from '../img/japanese-word/sentences-dark.jpg';
-import jwotdArchiveImg from '../img/japanese-word/archive-light.jpg';
-import jwotdArchiveDarkImg from '../img/japanese-word/archive-dark.jpg';
-import odinHomeImg from '../img/odin/home.jpg';
-import odinJavascriptImg from '../img/odin/javascript.jpg';
-import odinOverviewImg from '../img/odin/overview.jpg';
+import type { Project } from '@/types';
+import jwotdTodayImg from '@/assets/img/japanese-word/today-light.jpg';
+import jwotdTodayDarkImg from '@/assets/img/japanese-word/today-dark.jpg';
+import jwotdDefinitionImg from '@/assets/img/japanese-word/definition-light.jpg';
+import jwotdDefinitionDarkImg from '@/assets/img/japanese-word/definition-dark.jpg';
+import jwotdSentencesImg from '@/assets/img/japanese-word/sentences-light.jpg';
+import jwotdSentencesDarkImg from '@/assets/img/japanese-word/sentences-dark.jpg';
+import jwotdArchiveImg from '@/assets/img/japanese-word/archive-light.jpg';
+import jwotdArchiveDarkImg from '@/assets/img/japanese-word/archive-dark.jpg';
+import odinHomeImg from '@/assets/img/odin/home.jpg';
+import odinJavascriptImg from '@/assets/img/odin/javascript.jpg';
+import odinOverviewImg from '@/assets/img/odin/overview.jpg';
 
 const recentProjects: Project[] = [
   {

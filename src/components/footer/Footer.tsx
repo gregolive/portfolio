@@ -1,5 +1,5 @@
 import StyledFooter, { FooterLogo } from './StyledFooter';
-import SocialLinks from '../links/Links';
+import SocialLinks from '@/components/links/Links';
 
 const Footer = () => {
   return (

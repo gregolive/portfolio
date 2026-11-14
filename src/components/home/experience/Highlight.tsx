@@ -1,7 +1,7 @@
-import ImgCarousel from '../img-carousel/ImgCarousel';
-import { ProjectTitle, ProjectTags } from '../projects/StyledProjects';
+import ImgCarousel from '@/components/home/img-carousel/ImgCarousel';
+import { ProjectTitle, ProjectTags } from '@/components/home/projects/StyledProjects';
 import { StyledHighlight } from './StyledExperience';
-import type { Highlight as HighlightData } from '../../../types';
+import type { Highlight as HighlightData } from '@/types';
 
 interface HighlightProps {
   highlight: HighlightData;

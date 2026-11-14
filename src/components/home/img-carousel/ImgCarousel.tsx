@@ -6,9 +6,9 @@ import CarouselContainer, { Frame, WindowBar, Slides, ImgSlide, ZoomButton, Cont
 import Lightbox from './Lightbox';
 import { ChevronLeft, ChevronRight, Expand } from './icons';
 import { captionFor, srcFor } from './caption';
-import useInView from '../../../hooks/useInView';
-import useSwipe from '../../../hooks/useSwipe';
-import type { CarouselImage } from '../../../types';
+import useInView from '@/hooks/useInView';
+import useSwipe from '@/hooks/useSwipe';
+import type { CarouselImage } from '@/types';
 
 const AUTOPLAY_MS = 5000;
 

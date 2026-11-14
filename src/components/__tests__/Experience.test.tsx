@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react';
 import { ThemeProvider } from 'styled-components';
-import { lightTheme } from '../../assets/themes/themes';
-import Experience from '../home/experience/Experience';
-import { experience } from '../../assets/helpers/experience';
+import { lightTheme } from '@/assets/themes/themes';
+import Experience from '@/components/home/experience/Experience';
+import { experience } from '@/assets/helpers/experience';
 
 test('renders each job with its role and highlights', () => {
   render(

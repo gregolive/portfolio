@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import accentCard from '../../styled/card';
+import accentCard from '@/components/styled/card';
 
 // Same width as the experience list so the boxes line up
 const ProjectGrid = styled.div`

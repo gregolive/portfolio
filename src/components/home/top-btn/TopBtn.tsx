@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import useScrolledPast from '../../../hooks/useScrolledPast';
+import useScrolledPast from '@/hooks/useScrolledPast';
 
 const StyledTopBtn = styled.button`
   background: ${(props) => props.theme.primaryColor};

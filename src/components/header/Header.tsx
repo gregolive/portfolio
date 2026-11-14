@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import useActiveSection from '../../hooks/useActiveSection';
-import { RESUME_URL } from '../../assets/helpers/links';
+import useActiveSection from '@/hooks/useActiveSection';
+import { RESUME_URL } from '@/assets/helpers/links';
 import StyledHeader, { NavbarLogo, NavbarSwitch, Slider, SwitchIcon, NavbarBurger, NavbarMenu, NavbarLink, NavbarResume } from './StyledHeader';
 
 const sections = [

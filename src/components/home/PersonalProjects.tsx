@@ -1,6 +1,6 @@
-import { Code, StyledSection } from '../styled/Styled';
+import { Code, StyledSection } from '@/components/styled/Styled';
 import Projects from './projects/Projects';
-import { recentProjects } from '../../assets/helpers/projects';
+import { recentProjects } from '@/assets/helpers/projects';
 
 const PersonalProjects = () => {
   return (

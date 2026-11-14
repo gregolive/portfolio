@@ -1,7 +1,7 @@
 import { fireEvent, render, screen, within } from '@testing-library/react';
 import { ThemeProvider } from 'styled-components';
-import { lightTheme, darkTheme } from '../../assets/themes/themes';
-import ImgCarousel from '../home/img-carousel/ImgCarousel';
+import { lightTheme, darkTheme } from '@/assets/themes/themes';
+import ImgCarousel from '@/components/home/img-carousel/ImgCarousel';
 
 const images = [
   { src: 'one.jpg', alt: 'first screen' },

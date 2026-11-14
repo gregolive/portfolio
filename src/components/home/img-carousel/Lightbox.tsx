@@ -3,8 +3,8 @@ import type { KeyboardEvent, MouseEvent } from 'react';
 import { useTheme } from 'styled-components';
 import Overlay, { TopBar, Stage, BottomBar, LightboxButton } from './StyledLightbox';
 import { ChevronLeft, ChevronRight, Close } from './icons';
-import useSwipe from '../../../hooks/useSwipe';
-import type { CarouselImage } from '../../../types';
+import useSwipe from '@/hooks/useSwipe';
+import type { CarouselImage } from '@/types';
 import { captionFor, srcFor } from './caption';
 
 interface LightboxProps {

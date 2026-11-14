@@ -1,7 +1,7 @@
 import StyledSkills, { StyledSkillCol, SkillsGrid } from './StyledSkills';
 import type { ReactNode } from 'react';
-import type { Tag } from '../../../types';
-import { languages, frameworks, tools } from '../../../assets/helpers/skills';
+import type { Tag } from '@/types';
+import { languages, frameworks, tools } from '@/assets/helpers/skills';
 
 interface SkillColProps {
   svg: ReactNode;

@@ -1,4 +1,4 @@
-import { Code, StyledSection } from '../../styled/Styled';
+import { Code, StyledSection } from '@/components/styled/Styled';
 import ContactForm from './ContactForm';
 
 const Contact = () => {

@@ -1,5 +1,5 @@
 import { act, renderHook } from '@testing-library/react';
-import useTypewriter from '../useTypewriter';
+import useTypewriter from '@/hooks/useTypewriter';
 
 beforeEach(() => vi.useFakeTimers());
 afterEach(() => vi.useRealTimers());

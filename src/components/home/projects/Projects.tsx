@@ -1,6 +1,6 @@
-import ImgCarousel from '../img-carousel/ImgCarousel';
-import type { Project } from '../../../types';
-import useAccent from '../../../hooks/useAccent';
+import ImgCarousel from '@/components/home/img-carousel/ImgCarousel';
+import type { Project } from '@/types';
+import useAccent from '@/hooks/useAccent';
 import ProjectGrid, { StyledProject, ProjectBadge, ProjectTitle, ProjectLinks, ProjectPipeline, ProjectTags } from './StyledProjects';
 
 const ProjectItem = ({ project }: { project: Project }) => {
