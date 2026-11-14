@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import type { RefObject } from 'react';
 
 /** True while at least `threshold` of the element is inside the viewport. */
-const useInView = (ref: RefObject<Element>, threshold = 0.25): boolean => {
+const useInView = (ref: RefObject<Element | null>, threshold = 0.25): boolean => {
   const [inView, setInView] = useState(false);
 
   useEffect(() => {
