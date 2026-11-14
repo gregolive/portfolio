@@ -32,7 +32,9 @@ const ContactForm = () => {
     }
 
     setLoading(true);
-    emailjs.sendForm(import.meta.env.VITE_EMAILJS_SERVICE_ID, import.meta.env.VITE_EMAILJS_TEMPLATE_ID, formEl, import.meta.env.VITE_EMAILJS_PUBLIC_KEY)
+    emailjs.sendForm(import.meta.env.VITE_EMAILJS_SERVICE_ID, import.meta.env.VITE_EMAILJS_TEMPLATE_ID, formEl, {
+      publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+    })
       .then(() => {
         setShowMsg(true);
         formEl.reset();

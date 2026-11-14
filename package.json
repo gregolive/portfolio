@@ -16,7 +16,7 @@
     "deploy": "gh-pages -d build"
   },
   "dependencies": {
-    "@emailjs/browser": "^3.6.2",
+    "@emailjs/browser": "^5.0.3",
     "ityped": "^1.0.3",
     "react": "^19.3.1",
     "react-dom": "^19.3.1",
