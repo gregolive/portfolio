@@ -174,7 +174,24 @@ const experience: Job[] = [
           'Multiple address cart layout',
           'Rules configuration interface',
         ],
-        tags: [],
+        tags: [
+          {
+            text: 'React',
+            icon: <i className='devicon-react-original'></i>,
+          },
+          {
+            text: 'JavaScript',
+            icon: <i className='devicon-javascript-plain'></i>,
+          },
+          {
+            text: 'TypeScript',
+            icon: <i className='devicon-typescript-plain'></i>,
+          },
+          {
+            text: 'GraphQL',
+            icon: <i className='devicon-graphql-plain'></i>,
+          },
+        ],
         images: [
           {
             src: experienceGistFlowImg,

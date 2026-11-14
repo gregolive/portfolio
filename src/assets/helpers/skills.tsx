@@ -45,12 +45,16 @@ const frameworks: Tag[] = [
     icon: <i className='devicon-remix-original colored'></i>,
   },
   {
-    text: 'Jest',
-    icon: <i className='devicon-jest-plain colored'></i>,
+    text: 'Astro',
+    icon: <i className='devicon-astro-plain colored'></i>,
   },
   {
     text: 'Tailwind',
     icon: <i className='devicon-tailwindcss-plain colored'></i>,
+  },
+  {
+    text: 'Jest',
+    icon: <i className='devicon-jest-plain colored'></i>,
   },
 ];
 
