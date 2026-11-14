@@ -7,6 +7,8 @@ export interface Tag {
 
 export interface CarouselImage {
   src: string;
+  /** Optional screenshot of the same screen in dark mode, shown instead of `src` while dark mode is on */
+  darkSrc?: string;
   alt: string;
   /** Shown in the carousel window bar and the lightbox; defaults to the alt text */
   caption?: string;
@@ -22,6 +24,15 @@ export interface Project {
   darkColor?: string;
   repo: string;
   link: string;
+  /** Short label shown above the title, e.g. what makes the project stand out */
+  badge?: string;
+  /** Optional "How it works" steps shown under the summary */
+  pipeline?: PipelineStep[];
+}
+
+export interface PipelineStep {
+  label: string;
+  detail: string;
 }
 
 export interface Role {

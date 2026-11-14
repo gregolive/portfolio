@@ -6,6 +6,7 @@ import StyledHeader, { NavbarLogo, NavbarSwitch, Slider, SwitchIcon, NavbarBurge
 const sections = [
   { id: 'bio', label: 'Bio' },
   { id: 'experience', label: 'Experience' },
+  { id: 'projects', label: 'Projects' },
   { id: 'contact', label: 'Contact' },
 ];
 

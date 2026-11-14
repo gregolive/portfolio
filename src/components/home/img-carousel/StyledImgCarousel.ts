@@ -44,6 +44,8 @@ const WindowBar = styled.div`
   .lights span:nth-child(3) { background: #28c840; }
 
   .title {
+    /* Don't let a long caption widen the frame: the screenshot sets the width, the caption truncates */
+    contain: inline-size;
     font-family: 'Fira Code', monospace;
     font-size: 0.8rem;
     text-align: center;

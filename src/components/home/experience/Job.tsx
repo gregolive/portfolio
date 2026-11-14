@@ -2,7 +2,7 @@ import Highlight from './Highlight';
 import useAccent from '../../../hooks/useAccent';
 import { ProjectTags } from '../projects/StyledProjects';
 import type { Job as JobData } from '../../../types';
-import { StyledJob, JobCard, JobHeader, JobLogo, JobRoles, JobDetails, HighlightList } from './StyledExperience';
+import { StyledJob, JobCard, JobHeader, JobLogo, JobRoles, JobDetails, JobHighlights, HighlightList } from './StyledExperience';
 
 interface JobProps {
   job: JobData;
@@ -50,26 +50,31 @@ const Job = ({ job }: JobProps) => {
           )}
 
           {(tags.length > 0) && (
-            <ProjectTags $color={color}>
-              {tags.map((tag) =>
-                <span key={tag.text}>
-                  {tag.icon}
-                  {tag.text}
-                </span>
-              )}
-            </ProjectTags>
+            <div className='job-skills'>
+              <h4>Skills</h4>
+              <ProjectTags $color={color}>
+                {tags.map((tag) =>
+                  <span key={tag.text}>
+                    {tag.icon}
+                    {tag.text}
+                  </span>
+                )}
+              </ProjectTags>
+            </div>
           )}
         </JobDetails>
-      </JobCard>
 
-      {(highlights.length > 0) && (
-        <HighlightList>
-          <h4 className='highlights-heading'>Shipped feature highlights</h4>
-          {highlights.map((highlight) =>
-            <Highlight highlight={highlight} color={color} key={highlight.title} />
-          )}
-        </HighlightList>
-      )}
+        {(highlights.length > 0) && (
+          <JobHighlights>
+            <h4>Shipped feature highlights</h4>
+            <HighlightList>
+              {highlights.map((highlight) =>
+                <Highlight highlight={highlight} color={color} key={highlight.title} />
+              )}
+            </HighlightList>
+          </JobHighlights>
+        )}
+      </JobCard>
     </StyledJob>
   );
 };

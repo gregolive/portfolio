@@ -1,11 +1,11 @@
 import type { Job } from '../../types';
-import experienceGistAppsLogoImg from '../img/experience/gist-apps-logo.jpeg';
-import experienceGistTemplate1Img from '../img/experience/gist-template-1.jpg';
-import experienceGistTemplate2Img from '../img/experience/gist-template-2.jpg';
-import experienceGistOrderingImg from '../img/experience/gist-ordering.jpg';
-import experienceGistFlowImg from '../img/experience/gist-flow.jpeg';
-import experienceGistCartImg from '../img/experience/gist-cart.jpg';
-import experienceGistRulesImg from '../img/experience/gist-rules.jpg';
+import experienceGistAppsLogoImg from '../img/gist/gist-apps-logo.jpeg';
+import experienceGistTemplate1Img from '../img/gist/gist-template-1.jpg';
+import experienceGistTemplate2Img from '../img/gist/gist-template-2.jpg';
+import experienceGistOrderingImg from '../img/gist/gist-ordering.jpg';
+import experienceGistFlowImg from '../img/gist/gist-flow.jpeg';
+import experienceGistCartImg from '../img/gist/gist-cart.jpg';
+import experienceGistRulesImg from '../img/gist/gist-rules.jpg';
 
 const experience: Job[] = [
   {
@@ -76,6 +76,14 @@ const experience: Job[] = [
       {
         text: 'Storybook',
         icon: <i className='devicon-storybook-plain'></i>,
+      },
+      {
+        text: 'Claude',
+        icon: <i className='devicon-claude-plain'></i>,
+      },
+      {
+        text: 'Copilot',
+        icon: <i className='devicon-githubcopilot-plain'></i>,
       },
     ],
     highlights: [

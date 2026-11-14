@@ -1,10 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
-import type { FocusEvent } from 'react';
+import type { FocusEvent, PointerEvent } from 'react';
 import { createPortal } from 'react-dom';
+import { useTheme } from 'styled-components';
 import CarouselContainer, { Frame, WindowBar, Slides, ImgSlide, ZoomButton, Controls, NavButton, Indicators, Pill } from './StyledImgCarousel';
 import Lightbox from './Lightbox';
 import { ChevronLeft, ChevronRight, Expand } from './icons';
-import { captionFor } from './caption';
+import { captionFor, srcFor } from './caption';
 import useInView from '../../../hooks/useInView';
 import useSwipe from '../../../hooks/useSwipe';
 import type { CarouselImage } from '../../../types';
@@ -41,11 +42,14 @@ const ImgCarousel = ({ images, color, wide = false }: ImgCarouselProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const zoomRefs = useRef<(HTMLButtonElement | null)[]>([]);
   const inView = useInView(containerRef);
+  const { isDark } = useTheme();
 
   const slideIndex = slide.index;
   const count = images.length;
   const multiple = count > 1;
-  // Autoplay pauses while someone is looking at or interacting with the carousel, or can't see it
+  // Autoplay pauses while a mouse is over the image, keyboard focus is inside, the lightbox is open,
+  // or the carousel is off screen. Hovering the arrows and pills doesn't count, so clicking them
+  // starts the next slide's progress straight away.
   const paused = hovered || keyboardFocused || lightboxOpen || !inView;
 
   const goTo = (index: number, dir?: Direction) => {
@@ -71,6 +75,11 @@ const ImgCarousel = ({ images, color, wide = false }: ImgCarouselProps) => {
     wasOpen.current = lightboxOpen;
   }, [lightboxOpen, slideIndex]);
 
+  // Mouse only: a tap on a touch screen fires an enter with no matching leave, which would pause it for good
+  const onPointerEnter = (e: PointerEvent<HTMLDivElement>) => {
+    if (e.pointerType === 'mouse') setHovered(true);
+  };
+
   const onFocus = (e: FocusEvent<HTMLDivElement>) => {
     if (isFocusVisible(e.target)) setKeyboardFocused(true);
   };
@@ -85,12 +94,10 @@ const ImgCarousel = ({ images, color, wide = false }: ImgCarouselProps) => {
       role='group'
       aria-roledescription='carousel'
       aria-label={multiple ? `Screenshots, ${count} images` : 'Screenshot'}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
       onFocus={onFocus}
       onBlur={onBlur}
     >
-      <Frame>
+      <Frame onPointerEnter={onPointerEnter} onPointerLeave={() => setHovered(false)}>
         <WindowBar>
           <div className='lights' aria-hidden='true'><span /><span /><span /></div>
           <span className='title'>{captionFor(images[slideIndex])}</span>
@@ -107,7 +114,7 @@ const ImgCarousel = ({ images, color, wide = false }: ImgCarouselProps) => {
                 onClick={() => setLightboxOpen(true)}
                 aria-label={`Enlarge image: ${captionFor(img)}`}
               >
-                <img src={img.src} alt={img.alt} />
+                <img src={srcFor(img, isDark)} alt={img.alt} />
                 <span className='zoom-hint' aria-hidden='true'><Expand /></span>
               </ZoomButton>
             </ImgSlide>

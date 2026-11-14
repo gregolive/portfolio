@@ -165,11 +165,12 @@ const NavbarBurger = styled.button`
 const NavbarMenu = styled.div`
   justify-self: end;
   display: grid;
-  grid-template-columns: repeat(4, auto);
+  grid-auto-flow: column;
   align-items: center;
   column-gap: 1.5rem;
 
   @media screen and (max-width: 768px) {
+    grid-auto-flow: row;
     grid-template-columns: auto;
     grid-column: 1 / -1;
     justify-self: center;
@@ -178,7 +179,7 @@ const NavbarMenu = styled.div`
   
     &.open {
       background: ${(props) => props.theme.backgroundColor};
-      max-height: 18rem;
+      max-height: 22rem;
       visibility: visible;
       transition: max-height 0.25s ease-in;
       padding-bottom: 0.5rem;

@@ -1,4 +1,13 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+import accentCard from '../../styled/card';
+
+// Shared by the Responsibilities, Skills and Shipped feature highlights headings
+const detailHeading = css`
+  font-family: 'Fira Code', monospace;
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin: 0;
+`;
 
 const ExperienceList = styled.div`
   display: grid;
@@ -13,18 +22,9 @@ const StyledJob = styled.article`
 `;
 
 const JobCard = styled.div<{ $color: string }>`
-  background: ${(props) => props.theme.backgroundColor};
-  border: 1px solid ${(props) => props.theme.borderColor};
-  border-top: 4px solid ${(props) => props.$color};
-  border-radius: 0.5rem;
-  box-shadow: 1px 1px 5px ${(props) => props.theme.boxShadowColor};
-  padding: 1.5rem 2rem;
+  ${accentCard}
   display: grid;
   gap: 1.25rem;
-
-  @media screen and (max-width: 480px) {
-    padding: 1.25rem 1rem;
-  }
 `;
 
 const JobHeader = styled.div<{ $color: string }>`
@@ -134,16 +134,19 @@ const JobDetails = styled.div`
     font-size: 1.1rem;
   }
 
-  .job-responsibilities {
+  .job-responsibilities, .job-skills {
     display: grid;
     gap: 0.5rem;
   }
 
+  /* The tags already sit 0.5rem below the heading via the gap */
+  .job-skills > div {
+    margin-top: 0;
+    justify-content: flex-start;
+  }
+
   h4 {
-    font-family: 'Fira Code', monospace;
-    font-size: 1.1rem;
-    font-weight: 500;
-    margin: 0;
+    ${detailHeading}
   }
 
   ul {
@@ -165,18 +168,22 @@ const JobDetails = styled.div`
   }
 `;
 
+// Inside the job card, divided from the details above
+const JobHighlights = styled.div`
+  border-top: 1px solid ${(props) => props.theme.borderColor};
+  padding-top: 1.5rem;
+  display: grid;
+  gap: 1.5rem;
+
+  h4 {
+    ${detailHeading}
+    text-align: center;
+  }
+`;
+
 const HighlightList = styled.div`
   display: grid;
   gap: 3rem;
-
-  .highlights-heading {
-    font-family: 'Fira Code', monospace;
-    font-size: 1.1rem;
-    font-weight: 500;
-    opacity: 0.6;
-    margin: 0;
-    text-align: center;
-  }
 `;
 
 const StyledHighlight = styled.div`
@@ -242,4 +249,4 @@ const StyledHighlight = styled.div`
   }
 `;
 
-export { ExperienceList, StyledJob, JobCard, JobHeader, JobLogo, JobRoles, JobDetails, HighlightList, StyledHighlight };
+export { ExperienceList, StyledJob, JobCard, JobHeader, JobLogo, JobRoles, JobDetails, JobHighlights, HighlightList, StyledHighlight };

@@ -1,10 +1,11 @@
 import { useEffect, useRef } from 'react';
 import type { KeyboardEvent, MouseEvent } from 'react';
+import { useTheme } from 'styled-components';
 import Overlay, { TopBar, Stage, BottomBar, LightboxButton } from './StyledLightbox';
 import { ChevronLeft, ChevronRight, Close } from './icons';
 import useSwipe from '../../../hooks/useSwipe';
 import type { CarouselImage } from '../../../types';
-import { captionFor } from './caption';
+import { captionFor, srcFor } from './caption';
 
 interface LightboxProps {
   images: CarouselImage[];
@@ -20,6 +21,7 @@ const Lightbox = ({ images, index, color, onIndexChange, onClose }: LightboxProp
   const count = images.length;
   const multiple = count > 1;
   const image = images[index];
+  const { isDark } = useTheme();
   const caption = captionFor(image);
 
   const prev = () => onIndexChange((index - 1 + count) % count);
@@ -86,7 +88,7 @@ const Lightbox = ({ images, index, color, onIndexChange, onClose }: LightboxProp
       </TopBar>
 
       <Stage data-backdrop='true' {...swipe}>
-        <img src={image.src} alt={image.alt} key={image.src} />
+        <img src={srcFor(image, isDark)} alt={image.alt} key={image.src} />
       </Stage>
 
       <BottomBar data-backdrop='true'>

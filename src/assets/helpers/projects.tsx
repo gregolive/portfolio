@@ -1,322 +1,120 @@
+/**
+ * 
+ * @copyright     (c) 2026 Gist Applications Inc.
+ * @author        Greg Olive greg@gist-apps.com
+ * @package       portfolio
+ * 
+ * /src/assets/helpers/projects.tsx
+ * Created:       Wed Nov 11 2026
+ * Modified By:   Greg Olive
+ * Last Modified: Sat Nov 14 2026
+ */
+
 import type { Project } from '../../types';
-import bitblogHomeImg from '../img/bitblog/home.jpg';
-import bitblogLoginImg from '../img/bitblog/login.jpg';
-import bitblogDashboardImg from '../img/bitblog/dashboard.jpg';
-import bitblogPostFormImg from '../img/bitblog/post-form.jpg';
-import waldoDashboardImg from '../img/waldo/dashboard.jpg';
-import waldoOuterSpaceImg from '../img/waldo/outer-space.jpg';
-import waldoSkiSlopesImg from '../img/waldo/ski-slopes.jpg';
-import waldoGameOverImg from '../img/waldo/game-over.jpg';
-import tendiesTrackerDashboardImg from '../img/tendies-tracker/dashboard.jpg';
-import tendiesTrackerDashboard2Img from '../img/tendies-tracker/dashboard2.jpg';
-import tendiesTrackerPortfolioImg from '../img/tendies-tracker/portfolio.jpg';
-import tendiesTrackerTransactionViewImg from '../img/tendies-tracker/transaction-view.jpg';
-import tendiesTrackerTransactionsImg from '../img/tendies-tracker/transactions.jpg';
-import battleshipLevelSelectImg from '../img/battleship/level-select.jpg';
-import battleshipPlaceShipsImg from '../img/battleship/place-ships.jpg';
-import battleshipPlayerBoardImg from '../img/battleship/player-board.jpg';
-import battleshipEnemyBoardImg from '../img/battleship/enemy-board.jpg';
+import jwotdTodayImg from '../img/japanese-word/today-light.jpg';
+import jwotdTodayDarkImg from '../img/japanese-word/today-dark.jpg';
+import jwotdDefinitionImg from '../img/japanese-word/definition-light.jpg';
+import jwotdDefinitionDarkImg from '../img/japanese-word/definition-dark.jpg';
+import jwotdSentencesImg from '../img/japanese-word/sentences-light.jpg';
+import jwotdSentencesDarkImg from '../img/japanese-word/sentences-dark.jpg';
+import jwotdArchiveImg from '../img/japanese-word/archive-light.jpg';
+import jwotdArchiveDarkImg from '../img/japanese-word/archive-dark.jpg';
 import odinHomeImg from '../img/odin/home.jpg';
 import odinJavascriptImg from '../img/odin/javascript.jpg';
 import odinOverviewImg from '../img/odin/overview.jpg';
 
-const personalProjects: Project[] = [
-  /*{
-    title: 'Petbook',
+const recentProjects: Project[] = [
+  {
+    title: 'Japanese Word of the Day',
+    badge: 'Written daily by Claude',
     summary: `
-      In development... Facebook for pets!
-      A social media app with beautiful Framer Motion animations, Google and Facebook OAuth authentication, a React Typescript front-end, and more.
+      A Japanese learning site that writes itself. Every morning a scheduled job picks the next word from the
+      JMdict dictionary and uses the Claude API to write a simple-Japanese definition and example sentences at
+      three skill levels. Code checks every sentence, a second Claude call reviews them, and the site redeploys,
+      so a new word goes live each day with anybody touching it.
     `,
+    pipeline: [
+      {
+        label: 'Schedule',
+        detail: 'A GitHub Actions cron job runs daily, two days ahead, so every time zone has its word in time.',
+      },
+      {
+        label: 'Generate',
+        detail: 'Claude Haiku writes a definition and six example sentences as schema-validated structured output.',
+      },
+      {
+        label: 'Check',
+        detail: 'A Japanese tokenizer confirms each sentence really uses the word. Readings come from the dictionary, never the model.',
+      },
+      {
+        label: 'Review',
+        detail: 'A second Claude call grades accuracy and naturalness. After three failed tries the day falls back to dictionary-only content.',
+      },
+      {
+        label: 'Publish',
+        detail: 'The job commits the day\'s data, redeploys GitHub Pages and logs token usage, and opens an issue if anything fails.',
+      },
+    ],
     tags: [
       {
-        text: 'Express',
-        icon: <i className='devicon-express-original'></i>,
+        text: 'Claude API',
+        icon: <i className='devicon-claude-plain'></i>,
       },
       {
-        text: 'Framer Motion',
-        icon: <i className='devicon-react-original'></i>,
-      },
-      {
-        text: 'Heroku',
-        icon: <i className='devicon-heroku-original'></i>,
-      },
-      {
-        text: 'JavaScript',
-        icon: <i className='devicon-javascript-plain'></i>,
-      },
-      {
-        text: 'MaterialUI',
-        icon: <i className='devicon-materialui-plain colored'></i>,
-      },
-      {
-        text: 'MongoDB',
-        icon: <i className='devicon-mongodb-plain'></i>,
-      },
-      {
-        text: 'Node.js',
-        icon: <i className='devicon-nodejs-plain'></i>,
-      },
-      {
-        text: 'React',
-        icon: <i className='devicon-react-original'></i>,
-      },
-      {
-        text: 'Styled Components',
-        icon: <i className='devicon-react-original'></i>,
+        text: 'Astro',
+        icon: <i className='devicon-astro-plain'></i>,
       },
       {
         text: 'TypeScript',
         icon: <i className='devicon-typescript-plain'></i>,
       },
-    ],
-    images: [
       {
-        src: require('../img/petbook/login.gif'),
-        alt: 'petbook login animation',
-      },
-    ],
-    color: '#069def',
-    repo: 'https://github.com/gregolive/petbook',
-    link: '',
-  },*/
-  {
-    title: 'bitblog',
-    summary: `
-      A platform for creating and managing a blog, built using the MERN stack.
-      User authentication is handled via a simple username & password strategy with password hashing and salting for secure storage.
-      JSON Web Tokens ensure that users remain authenticated as they navigate the site.
-      The responsive app features a TinyMCE rich text editor that allows for the creation of clean, properly formatted blog posts.
-    `,
-    tags: [
-      {
-        text: 'CSS',
-        icon: <i className='devicon-css3-plain'></i>,
+        text: 'Tailwind CSS',
+        icon: <i className='devicon-tailwindcss-plain'></i>,
       },
       {
-        text: 'Express',
-        icon: <i className='devicon-express-original'></i>,
-      },
-      {
-        text: 'Heroku',
-        icon: <i className='devicon-heroku-original'></i>,
-      },
-      {
-        text: 'JavaScript',
-        icon: <i className='devicon-javascript-plain'></i>,
-      },
-      {
-        text: 'MongoDB',
-        icon: <i className='devicon-mongodb-plain'></i>,
+        text: 'GitHub Actions',
+        icon: <i className='devicon-githubactions-plain'></i>,
       },
       {
         text: 'Node.js',
         icon: <i className='devicon-nodejs-plain'></i>,
       },
       {
-        text: 'React',
-        icon: <i className='devicon-react-original'></i>,
+        text: 'Vitest',
+        icon: <i className='devicon-vitest-plain'></i>,
       },
     ],
     images: [
       {
-        src: bitblogHomeImg,
-        alt: 'bitblog home screen',
+        src: jwotdTodayImg,
+        darkSrc: jwotdTodayDarkImg,
+        alt: 'Japanese Word of the Day home page showing the word 一緒 (いっしょ), its English meaning and a beginner example sentence',
+        caption: "Today's word",
       },
       {
-        src: bitblogLoginImg,
-        alt: 'bitblog login screen',
+        src: jwotdDefinitionImg,
+        darkSrc: jwotdDefinitionDarkImg,
+        alt: 'The word 一緒 with a Claude-written definition in simple Japanese and furigana readings above the kanji',
+        caption: 'Definition by Claude',
       },
       {
-        src: bitblogDashboardImg,
-        alt: 'bitblog dashboard',
+        src: jwotdSentencesImg,
+        darkSrc: jwotdSentencesDarkImg,
+        alt: 'Intermediate example sentences for 一緒 with furigana readings and English translations',
+        caption: 'Sentences by Claude',
       },
       {
-        src: bitblogPostFormImg,
-        alt: 'bitblog new post form',
+        src: jwotdArchiveImg,
+        darkSrc: jwotdArchiveDarkImg,
+        alt: 'Archive page listing earlier words by date with search and JLPT level filters',
+        caption: 'Searchable archive',
       },
     ],
-    color: '#fc573c',
-    repo: 'https://github.com/gregolive/blog-platform',
-    link: 'https://gregolive.github.io/blog-platform/',
-  },
-  {
-    title: "Where's Waldo",
-    summary: `
-      Search for Waldo and friends in this online version of the classic books.
-      This is a multi-technology app with a React frontend and a Ruby on Rails backend.
-      The React client deployed with GitHub Pages makes calls to the Rails API deployed on Heroku where images, map data, and other assets are stored.
-      On each of the 6 levels, users must find 4 Waldo characters hidden throughout the map and are presented with a form to submit their solve time.
-    `,
-    tags: [
-      {
-        text: 'CSS',
-        icon: <i className='devicon-css3-plain'></i>,
-      },
-      {
-        text: 'Heroku',
-        icon: <i className='devicon-heroku-original'></i>,
-      },
-      {
-        text: 'JavaScript',
-        icon: <i className='devicon-javascript-plain'></i>,
-      },
-      {
-        text: 'PostgreSQL',
-        icon: <i className='devicon-postgresql-plain'></i>,
-      },
-      {
-        text: 'Rails',
-        icon: <i className='devicon-rails-plain'></i>,
-      },
-      {
-        text: 'React',
-        icon: <i className='devicon-react-original'></i>,
-      },
-      {
-        text: 'Ruby',
-        icon: <i className='devicon-ruby-plain'></i>,
-      },
-    ],
-    images: [
-      {
-        src: waldoDashboardImg,
-        alt: 'waldo dashboard',
-      },
-      {
-        src: waldoOuterSpaceImg,
-        alt: 'waldo outer space level',
-      },
-      {
-        src: waldoSkiSlopesImg,
-        alt: 'waldo ski slopes level',
-      },
-      {
-        src: waldoGameOverImg,
-        alt: 'waldo game over form',
-      },
-    ],
-    color: '#e71a0f',
-    repo: 'https://github.com/gregolive/waldo',
-    link: 'https://gregolive.github.io/waldo/',
-  },
-  {
-    title: 'Tendies Tracker',
-    summary: `
-      A full-stack app to track your stock holdings, created with Express, MongoDB, and more.
-      The platform provides real-time stock data from Finnhub to ensure that users stay up to date on their portfolio.
-      Features secure user authentication with hashed and salted passwords, a dashboard that provides daily and all-time portfolio statistics, and a portfolio page with a full portfolio breakdown, down to each holding.
-    `,
-    tags: [
-      {
-        text: 'CSS',
-        icon: <i className='devicon-css3-plain'></i>,
-      },
-      {
-        text: 'EJS',
-        icon: <i className='devicon-javascript-plain'></i>,
-      },
-      {
-        text: 'Express',
-        icon: <i className='devicon-express-original'></i>,
-      },
-      {
-        text: 'Heroku',
-        icon: <i className='devicon-heroku-original'></i>,
-      },
-      {
-        text: 'JavaScript',
-        icon: <i className='devicon-javascript-plain'></i>,
-      },
-      {
-        text: 'MongoDB',
-        icon: <i className='devicon-mongodb-plain'></i>,
-      },
-      {
-        text: 'Node.js',
-        icon: <i className='devicon-nodejs-plain'></i>,
-      },
-    ],
-    images: [
-      {
-        src: tendiesTrackerDashboardImg,
-        alt: 'tendies tracker dashboard',
-      },
-      {
-        src: tendiesTrackerDashboard2Img,
-        alt: 'tendies tracker dashboard 2',
-      },
-      {
-        src: tendiesTrackerPortfolioImg,
-        alt: 'tendies tracker portfolio view',
-      },
-      {
-        src: tendiesTrackerTransactionViewImg,
-        alt: 'tendies tracker transaction view',
-      },
-      {
-        src: tendiesTrackerTransactionsImg,
-        alt: 'tendies tracker all transactions',
-      },
-    ],
-    color: '#deaf02',
-    repo: 'https://github.com/gregolive/portfolio-tracker',
-    link: 'https://tendies-trackr.herokuapp.com/',
-  },
-  {
-    title: 'Retro Battleship',
-    summary: `
-      Take to the high seas and test your luck against the computer in the classic guessing game.
-      This is a single-page application built in vanilla JavaScript using a test-driven development approach via the Jest testing framework.
-      Users select a computer difficulty, place their ships and then take turns guessing locations on the opponent's board.
-      Last one standing (or floating) wins!
-    `,
-    tags: [
-      {
-        text: 'CSS',
-        icon: <i className='devicon-css3-plain'></i>,
-      },
-      {
-        text: 'HTML',
-        icon: <i className='devicon-html5-plain'></i>,
-      },
-      {
-        text: 'JavaScript',
-        icon: <i className='devicon-javascript-plain'></i>,
-      },
-      {
-        text: 'Jest',
-        icon: <i className='devicon-jest-plain'></i>,
-      },
-      {
-        text: 'npm',
-        icon: <i className='devicon-npm-original-wordmark'></i>,
-      },
-      {
-        text: 'Webpack',
-        icon: <i className='devicon-webpack-plain'></i>,
-      },
-    ],
-    images: [
-      {
-        src: battleshipLevelSelectImg,
-        alt: 'retro battleship level select',
-      },
-      {
-        src: battleshipPlaceShipsImg,
-        alt: 'retro battleship place ships screen',
-      },
-      {
-        src: battleshipPlayerBoardImg,
-        alt: 'retro battleship player board',
-      },
-      {
-        src: battleshipEnemyBoardImg,
-        alt: 'retro battleship enemy board',
-      },
-    ],
-    color: '#8a4fff',
-    repo: 'https://github.com/gregolive/battleship',
-    link: 'https://gregolive.github.io/battleship/',
+    color: '#b93a26',
+    darkColor: '#f07a62',
+    repo: 'https://github.com/gregolive/japanese-word-of-the-day',
+    link: 'https://gregolive.github.io/japanese-word-of-the-day/',
   },
 ];
 
@@ -348,4 +146,4 @@ const openSourceProjects: Project[] = [
   },
 ];
 
-export { personalProjects, openSourceProjects };
+export { recentProjects, openSourceProjects };
