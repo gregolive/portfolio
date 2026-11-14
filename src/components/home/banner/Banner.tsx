@@ -1,23 +1,11 @@
-import { useRef, useEffect } from 'react';
-import { init } from 'ityped';
+import useTypewriter from '../../../hooks/useTypewriter';
 import StyledBanner, { Console, Arrows } from './StyledBanner';
 import { Code } from '../../styled/Styled';
 
+const TITLES = ['Full-stack developer', 'OS Contributor', 'Designer'];
+
 const Banner = () => {
-  const titleRef = useRef<HTMLSpanElement>(null);
-  const started = useRef(false);
-  useEffect(() => {
-    // ityped has no teardown, so only start it once (StrictMode runs effects twice in dev)
-    if (!titleRef.current || started.current) return;
-    started.current = true;
-    init(titleRef.current, {
-      showCursor: false,
-      strings: ['Full-stack developer', 'OS Contributor', 'Designer'],
-      typeSpeed: 100,
-      backDelay: 2000,
-      backSpeed: 60,
-    });
-  }, []);
+  const title = useTypewriter(TITLES, { typeSpeed: 100, backDelay: 2000, backSpeed: 60 });
 
   return (
     <StyledBanner className='banner'>
@@ -25,7 +13,9 @@ const Banner = () => {
       
       <Console>
         <span className='prompt'>C:\Users\guest&#62;&nbsp;</span>
-        <span className='command' ref={titleRef}></span>
+        {/* Screen readers get the full list once instead of every keystroke */}
+        <span className='command' aria-hidden='true'>{title}</span>
+        <span className='sr-only'>{TITLES.join(', ')}</span>
       </Console>
 
       <Arrows>

@@ -72,7 +72,7 @@ const tools: Tag[] = [
     icon: <i className='devicon-git-plain colored'></i>,
   },
   {
-    text: 'GitHub Copilot',
+    text: 'Copilot',
     icon: <i className='devicon-githubcopilot-plain colored'></i>,
   },
   {

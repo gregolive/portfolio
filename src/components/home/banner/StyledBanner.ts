@@ -53,6 +53,15 @@ const Console = styled.div`
     font-weight: 600;
   }
 
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
   @media screen and (max-width: 768px) {
     font-size: 1.5rem;
     padding: 0.75rem 1.25rem;

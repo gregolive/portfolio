@@ -81,4 +81,13 @@ const ErrorMsg = styled.small`
   background: none;
 `;
 
-export { StyledInput, StyledTextarea, ErrorMsg };
+// Spam trap: kept in the DOM for bots to fill in, but moved off screen for people
+const Honeypot = styled.div`
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+`;
+
+export { StyledInput, StyledTextarea, ErrorMsg, Honeypot };
