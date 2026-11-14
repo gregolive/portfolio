@@ -24,7 +24,7 @@ export interface Project {
   darkColor?: string;
   repo: string;
   link: string;
-  /** Short label shown above the title, e.g. what makes the project stand out */
+  /** Short label shown under the title, e.g. what makes the project stand out */
   badge?: string;
   /** Optional "How it works" steps shown under the summary */
   pipeline?: PipelineStep[];
