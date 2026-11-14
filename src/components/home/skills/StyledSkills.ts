@@ -76,6 +76,11 @@ const SkillsGrid = styled.ul`
   i {
     font-size: 2rem;
   }
+
+  /* These brand colors are black, which disappears on the dark theme */
+  i.devicon-githubcopilot-plain, i.devicon-symfony-original, i.devicon-remix-original {
+    color: ${(props) => props.theme.fontColor};
+  }
 `;
 
 export { StyledSkillCol, SkillsGrid };

@@ -60,12 +60,20 @@ const tools: Tag[] = [
     icon: <i className='devicon-amazonwebservices-plain-wordmark colored'></i>,
   },
   {
+    text: 'Claude',
+    icon: <i className='devicon-claude-plain colored'></i>,
+  },
+  {
     text: 'Cloudflare',
     icon: <i className='devicon-cloudflare-plain colored'></i>,
   },
   {
     text: 'Git',
     icon: <i className='devicon-git-plain colored'></i>,
+  },
+  {
+    text: 'GitHub Copilot',
+    icon: <i className='devicon-githubcopilot-plain colored'></i>,
   },
   {
     text: 'npm',
