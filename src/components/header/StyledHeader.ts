@@ -165,7 +165,8 @@ const NavbarBurger = styled.button`
 const NavbarMenu = styled.div`
   justify-self: end;
   display: grid;
-  grid-template-columns: repeat(3, auto);
+  grid-template-columns: repeat(4, auto);
+  align-items: center;
   column-gap: 1.5rem;
 
   @media screen and (max-width: 768px) {
@@ -254,4 +255,41 @@ const NavbarLink = styled.a`
   }
 `;
 
-export { NavbarLogo, NavbarSwitch, Slider, SwitchIcon, NavbarBurger, NavbarMenu, NavbarLink };
+// Outlined pill so the resume reads as an action rather than another section link
+const NavbarResume = styled(NavbarLink)`
+  color: ${(props) => props.theme.textShadowColor};
+  border: 1.5px solid ${(props) => props.theme.textShadowColor};
+  border-radius: 999px;
+  padding: 0 0.9rem;
+  line-height: 2rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+
+  &:before {
+    content: none;
+  }
+
+  svg {
+    height: 0.95rem;
+    width: 0.95rem;
+  }
+
+  &:hover {
+    color: ${(props) => props.theme.backgroundColor};
+    background: ${(props) => props.theme.textShadowColor};
+    text-shadow: none;
+  }
+
+  &:focus-visible {
+    outline: 2px solid ${(props) => props.theme.textShadowColor};
+    outline-offset: 2px;
+  }
+
+  @media screen and (max-width: 768px) {
+    justify-self: center;
+    margin: 0.5rem 0 0.25rem;
+  }
+`;
+
+export { NavbarLogo, NavbarSwitch, Slider, SwitchIcon, NavbarBurger, NavbarMenu, NavbarLink, NavbarResume };

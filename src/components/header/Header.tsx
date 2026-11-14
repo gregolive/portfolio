@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import useActiveSection from '../../hooks/useActiveSection';
-import StyledHeader, { NavbarLogo, NavbarSwitch, Slider, SwitchIcon, NavbarBurger, NavbarMenu, NavbarLink } from './StyledHeader';
+import { RESUME_URL } from '../../assets/helpers/links';
+import StyledHeader, { NavbarLogo, NavbarSwitch, Slider, SwitchIcon, NavbarBurger, NavbarMenu, NavbarLink, NavbarResume } from './StyledHeader';
 
 const sections = [
   { id: 'bio', label: 'Bio' },
@@ -43,6 +44,10 @@ const Nav = ({ toggleTheme, dark }: NavProps) => {
         {sections.map(({ id, label }) =>
           <NavbarLink href={`#${id}`} className={(active === id) ? 'active' : ''} onClick={closeMenu} key={id}>{label}</NavbarLink>
         )}
+        <NavbarResume href={RESUME_URL} target='_blank' rel='noreferrer' onClick={closeMenu} aria-label='Resume (PDF, opens in a new tab)'>
+          Resume
+          <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth='2.5' strokeLinecap='round' strokeLinejoin='round' aria-hidden='true'><path d='M7 17L17 7M8 7h9v9' /></svg>
+        </NavbarResume>
       </NavbarMenu>
     </StyledHeader>
   );
