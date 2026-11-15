@@ -16,7 +16,7 @@ test('renders the main sections and navigation', () => {
   expect(resumeLinks).toHaveLength(3);
   resumeLinks.forEach((link) => {
     // The /portfolio/ base path only applies to real builds, so just check the file
-    expect(link).toHaveAttribute('href', expect.stringMatching(/\/greg-olive-resume\.pdf$/));
+    expect(link).toHaveAttribute('href', expect.stringMatching(/\/gregory-olive-resume\.pdf$/));
     expect(link).toHaveAttribute('target', '_blank');
   });
 });

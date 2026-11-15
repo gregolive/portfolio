@@ -116,7 +116,7 @@ All the content lives in typed data files in `src/assets/helpers/`, so most upda
   - **Dark mode:** add a `darkSrc` to show a dark version while dark mode is on.
   - **Captions:** keep them short (about 25 characters) so they fit in the carousel's title bar.
 - **Skills:** add a `Tag` to `languages`, `frameworks` or `tools` in `skills.tsx`. Icons come from [Devicon](https://devicon.dev). Icons that are black need an entry in the dark-mode color rule in `skills/StyledSkills.ts` so they stay visible.
-- **Resume:** save the PDF as `public/greg-olive-resume.pdf`. To use a different file name, change `RESUME_URL` in `links.ts`. The PDF is also shareable directly at `https://gregolive.github.io/portfolio/greg-olive-resume.pdf`.
+- **Resume:** save the PDF as `public/gregory-olive-resume.pdf`. To use a different file name, change `RESUME_URL` in `links.ts`. The PDF is also shareable directly at `https://gregolive.github.io/portfolio/gregory-olive-resume.pdf`.
 
 ## Contact form
 
