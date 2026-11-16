@@ -37,6 +37,10 @@ const frameworks: Tag[] = [
     icon: <i className='devicon-reactnative-original colored'></i>,
   },
   {
+    text: 'Astro',
+    icon: <i className='devicon-astro-plain colored'></i>,
+  },
+  {
     text: 'Symfony',
     icon: <i className='devicon-symfony-original colored'></i>,
   },
@@ -45,8 +49,8 @@ const frameworks: Tag[] = [
     icon: <i className='devicon-remix-original colored'></i>,
   },
   {
-    text: 'Astro',
-    icon: <i className='devicon-astro-plain colored'></i>,
+    text: 'Next.js',
+    icon: <i className='devicon-nextjs-plain colored'></i>,
   },
   {
     text: 'Tailwind',
@@ -64,20 +68,20 @@ const tools: Tag[] = [
     icon: <i className='devicon-amazonwebservices-plain-wordmark colored'></i>,
   },
   {
-    text: 'Claude',
-    icon: <i className='devicon-claude-plain colored'></i>,
-  },
-  {
     text: 'Cloudflare',
     icon: <i className='devicon-cloudflare-plain colored'></i>,
   },
   {
-    text: 'Git',
-    icon: <i className='devicon-git-plain colored'></i>,
+    text: 'Claude',
+    icon: <i className='devicon-claude-plain colored'></i>,
   },
   {
     text: 'Copilot',
     icon: <i className='devicon-githubcopilot-plain colored'></i>,
+  },
+  {
+    text: 'Git',
+    icon: <i className='devicon-git-plain colored'></i>,
   },
   {
     text: 'npm',
